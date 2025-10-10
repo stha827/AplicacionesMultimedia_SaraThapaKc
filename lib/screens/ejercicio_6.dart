@@ -5,11 +5,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 class TextosFilas extends StatelessWidget {
   const TextosFilas({super.key});
 
+// 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Textos con diferentes fuentes'),
+          title: Text("Textos con diferentes fuentes"),
         ),
         body: Column(
           children: <Widget>[
