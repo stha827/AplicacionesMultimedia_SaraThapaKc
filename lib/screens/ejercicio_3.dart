@@ -10,9 +10,15 @@ class MiniaturasScreen extends StatelessWidget {
       appBar: AppBar(title: const Text("Miniaturas")),
       body: Column(
         children: const [
-          Image(image: AssetImage("./assets/screens3/lirios.webp")),
-          Image(image: AssetImage("./assets/screens3/radiata.jpg")),
-          Image(image: AssetImage("./assets/screens3/rosas.jpg")),
+          Image(
+            image: AssetImage("./assets/screens3/lirios.webp"),
+            height: 150,
+          ),
+          Image(
+            image: AssetImage("./assets/screens3/radiata.jpg"),
+            height: 150,
+          ),
+          Image(image: AssetImage("./assets/screens3/rosas.jpg"), height: 150),
         ],
       ),
     );

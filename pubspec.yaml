@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^6.2.1
+  auto_size_text: ^3.0.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
@@ -68,6 +69,7 @@ flutter:
     - assets/screens5/libro3.jpg
     - assets/screens5/libro4.jpg
     - assets/screens5/libro5.jpg
+    - assets/screens7/album1.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
