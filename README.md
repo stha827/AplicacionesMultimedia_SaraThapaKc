@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-# ejericio1_sarathapa
+# Ejercicios Flutter
 
-A new Flutter project.
+Un nuevo proyecto Flutter.
 
 ## Getting Started
 
