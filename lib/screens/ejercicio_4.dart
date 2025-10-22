@@ -8,14 +8,14 @@ class IconosScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("Iconos")),
       body: Center(
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Row(children: [Icon(Icons.home)]),
-            Row(children: [Icon(Icons.favorite)]),
-            Row(children: [Icon(Icons.school)]),
-            Row(children: [Icon(Icons.star)]),
-            Row(children: [Icon(Icons.phone)]),
+            Icon(Icons.home),
+            Icon(Icons.favorite),
+            Icon(Icons.school),
+            Icon(Icons.star),
+            Icon(Icons.phone),
           ],
         ),
       ),
