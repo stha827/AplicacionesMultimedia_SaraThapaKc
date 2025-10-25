@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ImagenesResponsive extends StatelessWidget {
   const ImagenesResponsive({super.key});
-  // Creamos una pantalla que muestra imágenes repetidas en filas y columnas
+  // Creamos una pantalla que muestra imágenes repetidas en filas y columnas de forma responsive
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,17 +11,14 @@ class ImagenesResponsive extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            // Imagen desde assets
+            // Imagen desde internet
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Image(
-                  image: AssetImage(
-                    "./assets/screens1/imagen_representativa.jpg",
-                  ),
+                Image.network(
+                  "https://m.media-amazon.com/images/I/81-CePGozIL.jpg",
                   width: 150,
-                  height: 150,
-                  fit: BoxFit.cover,
+                  height: 200,
                 ),
               ],
             ),
@@ -31,16 +28,14 @@ class ImagenesResponsive extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Image.network(
-                  "https://i.scdn.co/image/ab67616d00001e025a0c2870f4f309e382d1fad6",
+                  "https://m.media-amazon.com/images/I/91aOJCbAZNL._UF1000,1000_QL80_.jpg",
                   width: 150,
-                  height: 150,
-                  fit: BoxFit.cover,
+                  height: 200,
                 ),
                 Image.network(
-                  "https://i.scdn.co/image/ab67616d00001e025a0c2870f4f309e382d1fad6",
+                  "https://m.media-amazon.com/images/I/916IuScG4CL._UF1000,1000_QL80_.jpg",
                   width: 150,
-                  height: 150,
-                  fit: BoxFit.cover,
+                  height: 200,
                 ),
               ],
             ),
@@ -50,22 +45,19 @@ class ImagenesResponsive extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Image.network(
-                  "https://i.scdn.co/image/ab6761610000e5ebdf0b5ac84376a0a4b2166816",
+                  "https://m.media-amazon.com/images/I/91QJ6giOJbL._AC_UF1000,1000_QL80_.jpg",
                   width: 150,
-                  height: 150,
-                  fit: BoxFit.cover,
+                  height: 200,
                 ),
                 Image.network(
-                  "https://i.scdn.co/image/ab6761610000e5ebdf0b5ac84376a0a4b2166816",
+                  "https://m.media-amazon.com/images/I/91-FhjVDJyL._UF1000,1000_QL80_.jpg",
                   width: 150,
-                  height: 150,
-                  fit: BoxFit.cover,
+                  height: 200,
                 ),
                 Image.network(
-                  "https://i.scdn.co/image/ab6761610000e5ebdf0b5ac84376a0a4b2166816",
+                  "https://m.media-amazon.com/images/I/91bGJCSfbyL._UF1000,1000_QL80_.jpg",
                   width: 150,
-                  height: 150,
-                  fit: BoxFit.cover,
+                  height: 200,
                 ),
               ],
             ),

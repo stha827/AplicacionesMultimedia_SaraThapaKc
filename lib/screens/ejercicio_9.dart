@@ -3,69 +3,40 @@ import 'package:flutter/material.dart';
 class RetosPagina extends StatelessWidget {
   const RetosPagina({super.key});
   // Creamos una pantalla que muestra imágenes repetidas en filas y columnas
-  @override
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Imágenes repetidas")),
+      appBar: AppBar(title: const Text("Mi foto")),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Imagen desde assets
-            Row(
-              children: [
-                Image(
-                  image: AssetImage("./assets/screens7/album1.jpg"),
-                  width: 150,
-                  height: 150,
-                  fit: BoxFit.cover,
-                ),
-              ],
+            const Image(image:  AssetImage("./assets/screens1/imagen_representativa.jpg"),
+              width: 350,
+              height: 350,
+              fit: BoxFit.cover,
             ),
-
-            // Imagen desde internet repetida 2 veces
-            Row(
-              children: [
-                Image.network(
-                  "https://i.scdn.co/image/ab67616d00001e025a0c2870f4f309e382d1fad6",
-                  width: 150,
-                  height: 150,
-                  fit: BoxFit.cover,
+            Container(
+              margin: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(20),
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 143, 206, 250),
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(50.0),
+                  bottomLeft: Radius.circular(50.0),
                 ),
-                Image.network(
-                  "https://i.scdn.co/image/ab67616d00001e025a0c2870f4f309e382d1fad6",
-                  width: 150,
-                  height: 150,
-                  fit: BoxFit.cover,
+              ),
+              child: const Text(
+               "Sara Thapa Kc",
+                style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.black,
                 ),
-              ],
-            ),
-
-            // Imagen desde internet repetida 3 veces
-            Row(
-              children: [
-                Image.network(
-                  "https://i.scdn.co/image/ab6761610000e5ebdf0b5ac84376a0a4b2166816",
-                  width: 150,
-                  height: 150,
-                  fit: BoxFit.cover,
-                ),
-                Image.network(
-                  "https://i.scdn.co/image/ab6761610000e5ebdf0b5ac84376a0a4b2166816",
-                  width: 150,
-                  height: 150,
-                  fit: BoxFit.cover,
-                ),
-                Image.network(
-                  "https://i.scdn.co/image/ab6761610000e5ebdf0b5ac84376a0a4b2166816",
-                  width: 150,
-                  height: 150,
-                  fit: BoxFit.cover,
-                ),
-              ],
+              ),
             ),
           ],
         ),
+        
       ),
     );
   }

@@ -8,6 +8,8 @@ import 'screens/ejercicio_4.dart';
 import 'screens/ejercicio_5.dart';
 import 'screens/ejercicio_6.dart';
 import 'screens/ejercicio_7.dart';
+import 'screens/ejercicio_8.dart';
+import 'screens/ejercicio_9.dart';
 
 void main() {
   runApp(const MiApp());
@@ -135,6 +137,26 @@ class MenuLateral extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => const ImagenesRepetidas()),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.image_aspect_ratio_rounded),
+            title: const Text("Ejercicio 8"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ImagenesResponsive()),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.image_aspect_ratio_rounded),
+            title: const Text("Ejercicio 9"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const RetosPagina()),
               );
             },
           ),
