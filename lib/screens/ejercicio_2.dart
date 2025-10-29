@@ -13,8 +13,8 @@ class FotoScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             Image(image:  AssetImage("./assets/screens1/imagen_representativa.jpg"),
+            fit: BoxFit.cover,
             ),
-            SizedBox(height: 10),
             Text("Sara Thapa Kc", style: TextStyle(fontSize: 22)),
           ],
         ),
