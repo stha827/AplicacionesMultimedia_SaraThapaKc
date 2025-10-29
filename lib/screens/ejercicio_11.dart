@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class RetosPagina extends StatelessWidget {
-  const RetosPagina({super.key});
+class PaginaInstagram extends StatelessWidget {
+  const PaginaInstagram({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -70,6 +70,7 @@ flutter:
     - assets/screens5/libro4.jpg
     - assets/screens5/libro5.jpg
     - assets/screens7/album1.jpg
+    - assets/img/banner.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
