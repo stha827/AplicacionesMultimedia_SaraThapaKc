@@ -31,47 +31,41 @@ class _ContadorClicsState extends State<ContadorClics> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "asgas",
-      home: Scaffold(
-        appBar: AppBar(title: Text("Contador")),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(child: Text("Has pulsado:", style: TextStyle(fontSize: 25))),
-            Center(
-              child: Text(
-                _veces == 1 ? "$_veces vez" : "$_veces veces",
-                style: TextStyle(fontSize: 35),
-              ),
+    return Scaffold(
+      appBar: AppBar(title: Text("Contador")),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(child: Text("Has pulsado", style: TextStyle(fontSize: 55))),
+          Center(
+            child: Text(
+              _veces == 1 ? "$_veces vez" : "$_veces veces",
+              style: TextStyle(fontSize: 40),
             ),
-            const Row(
-              ElevatedButton(
-                onPressed: _ponerCero,
-                child: Icon(Icons.exposure_zero),
-              ),
-              ElevatedButton(onPressed: _ponerCero, child: Icon(Icons.abc)),
-            ),
-          ],
-        ),
+          ),
+          ElevatedButton(
+            onPressed: _ponerCero,
+            style: ElevatedButton.styleFrom(minimumSize: Size(150, 50)),
+            child: Icon(Icons.exposure_zero),
+          ),
+        ],
+      ),
 
-        floatingActionButton: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            FloatingActionButton(
-              onPressed: _incrementar,
-              tooltip: "Incrementar",
-              child: const Icon(Icons.add),
-            ),
-            const SizedBox(height: 10),
-            FloatingActionButton(
-              onPressed: _restar,
-              tooltip: "Restar",
-              child: Icon(Icons.remove),
-            ),
-          ],
-        ),
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          FloatingActionButton(
+            onPressed: _incrementar,
+            tooltip: "Incrementar",
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(height: 10),
+          FloatingActionButton(
+            onPressed: _restar,
+            tooltip: "Restar",
+            child: Icon(Icons.remove),
+          ),
+        ],
       ),
     );
   }

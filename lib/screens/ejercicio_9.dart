@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class RetosPagina extends StatelessWidget {
@@ -10,25 +11,34 @@ class RetosPagina extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Image(
-              image: AssetImage("./assets/screens1/imagen_representativa.jpg"),
-              width: 350,
-              height: 350,
-              fit: BoxFit.cover,
-            ),
-            Container(
-              margin: const EdgeInsets.all(10),
-              padding: const EdgeInsets.all(20),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 143, 206, 250),
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(50.0),
-                  bottomLeft: Radius.circular(50.0),
+            Expanded(
+              child: Image(
+                image: AssetImage(
+                  "./assets/screens1/imagen_representativa.jpg",
                 ),
               ),
-              child: const Text(
-                "Sara Thapa Kc",
-                style: TextStyle(fontSize: 25, color: Colors.black),
+            ),
+            Expanded(
+              //Añadimos un padding para que el contenedor ocupe solo un porcentaje en la pantalla
+              child: Padding(
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).size.height * 0.32,
+                ),
+                child: Container(
+                  margin: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(20),
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 143, 206, 250),
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(50.0),
+                      bottomLeft: Radius.circular(50.0),
+                    ),
+                  ),
+                  child: AutoSizeText(
+                    "Sara Thapa Kc",
+                    style: TextStyle(fontSize: 25, color: Colors.black),
+                  ),
+                ),
               ),
             ),
           ],
