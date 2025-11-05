@@ -11,7 +11,7 @@ import 'screens/ejercicio_6.dart';
 import 'screens/ejercicio_7.dart';
 import 'screens/ejercicio_8.dart';
 import 'screens/ejercicio_9.dart';
-import 'screens/ejercicio_11.dart';
+import 'screens/ejercicio11/ejercicio_11.dart';
 
 void main() {
   runApp(const MiApp());
