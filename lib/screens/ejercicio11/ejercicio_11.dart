@@ -1,7 +1,9 @@
+import 'fotos.dart';
 import 'destacadas.dart';
 import 'package:flutter/material.dart';
 import 'header.dart';
 import 'botonesFalsos.dart';
+import 'header_fotos.dart';
 
 class PaginaInstagram extends StatelessWidget {
   const PaginaInstagram({super.key});
@@ -20,7 +22,15 @@ class PaginaInstagram extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(children: [Header(), BotonesFalsos(), Destacadas()]),
+      body: Column(
+        children: [
+          Header(),
+          BotonesFalsos(),
+          Destacadas(),
+          HeaderFotos(),
+          Fotos(),
+        ],
+      ),
     );
   }
 }

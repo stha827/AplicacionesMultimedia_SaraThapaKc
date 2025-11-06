@@ -13,7 +13,7 @@ class Header extends StatelessWidget {
           Row(
             children: [
               Padding(
-                padding: EdgeInsets.all(20.0),
+                padding: EdgeInsets.only(left: 20.0, top: 20),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(200),
                   child: Image.asset(
@@ -24,7 +24,7 @@ class Header extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(30.0),
+                padding: EdgeInsets.only(left: 30.0, right: 30, top: 20),
                 child: Column(
                   children: [
                     Text(
@@ -36,7 +36,7 @@ class Header extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(30.0),
+                padding: EdgeInsets.only(left: 30.0, right: 30, top: 20),
                 child: Column(
                   children: [
                     Text(
@@ -48,7 +48,7 @@ class Header extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(30.0),
+                padding: EdgeInsets.only(left: 30.0, right: 30, top: 20),
                 child: Column(
                   children: [
                     Text(

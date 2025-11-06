@@ -8,6 +8,7 @@ class Destacadas extends StatelessWidget {
       children: [
         // Utilizamos SizedBox ya que sirve mejor que un Container para separar widgets y crear espacio
         SizedBox(
+          height: 120,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
