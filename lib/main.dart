@@ -66,7 +66,7 @@ class MenuLateral extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("img/banner.webp"),
+                image: AssetImage("assets/img/banner.jpg"),
                 fit: BoxFit.cover,
               ),
             ),
