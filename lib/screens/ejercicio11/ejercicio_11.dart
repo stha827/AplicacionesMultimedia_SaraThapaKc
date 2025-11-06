@@ -1,5 +1,7 @@
+import 'destacadas.dart';
 import 'package:flutter/material.dart';
 import 'header.dart';
+import 'botonesFalsos.dart';
 
 class PaginaInstagram extends StatelessWidget {
   const PaginaInstagram({super.key});
@@ -10,11 +12,15 @@ class PaginaInstagram extends StatelessWidget {
         title: Center(
           child: Text(
             "maxelperro",
-            style: TextStyle(fontSize: 17, color: Colors.black),
+            style: TextStyle(
+              fontSize: 17,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
-      body: Column(children: [const Header()]),
+      body: Column(children: [Header(), BotonesFalsos(), Destacadas()]),
     );
   }
 }

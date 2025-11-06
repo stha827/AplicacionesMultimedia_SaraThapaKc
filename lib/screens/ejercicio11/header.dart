@@ -8,22 +8,98 @@ class Header extends StatelessWidget {
     int followers = 3333;
     int following = 4000;
     return Container(
-      child: Row(
+      child: Column(
         children: [
-          Padding(
-            padding: EdgeInsets.all(20.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(200),
-              child: Image.asset(
-                'screens11/fotoPerfil.jpg',
-                height: 100,
-                width: 100,
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(20.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(200),
+                  child: Image.asset(
+                    'screens11/fotoPerfil.jpg',
+                    height: 100,
+                    width: 100,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(30.0),
+                child: Column(
+                  children: [
+                    Text(
+                      "$posts",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Text("Posts"),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(30.0),
+                child: Column(
+                  children: [
+                    Text(
+                      "$followers",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Text("Followers"),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(30.0),
+                child: Column(
+                  children: [
+                    Text(
+                      "$following",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Text("Following"),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          // Utilizamos SizedBox ya que sirve mejor que un Container para separar widgets y crear espacio
+          SizedBox(
+            width: double.infinity,
+            child: Padding(
+              padding: EdgeInsets.only(left: 20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Maxi El Perro <3",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "Perro",
+                    style: TextStyle(color: Color.fromRGBO(0, 0, 0, 0.5)),
+                  ),
+                  Text("Soy de Nerja 🏖️"),
+                  Text("Tengo 7 añitos 🐶"),
+                  Text("#woofwoof", style: TextStyle(color: Colors.indigo)),
+                ],
               ),
             ),
           ),
-          Column(children: [Text("$posts"), Text("Posts")]),
-          Column(children: [Text("$followers"), Text("Followers")]),
-          Column(children: [Text("$following"), Text("Following")]),
+          SizedBox(
+            width: double.infinity,
+            child: Padding(
+              padding: EdgeInsets.only(left: 20.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Followed by"),
+                  Text(
+                    " sxarxaw, doglover123 y 9 otros",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
