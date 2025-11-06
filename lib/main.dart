@@ -12,6 +12,7 @@ import 'screens/ejercicio_7.dart';
 import 'screens/ejercicio_8.dart';
 import 'screens/ejercicio_9.dart';
 import 'screens/ejercicio11/ejercicio_11.dart';
+import 'screens/ejercicio_12.dart';
 
 void main() {
   runApp(const MiApp());
@@ -51,8 +52,8 @@ class MenuLateral extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
+    return Scaffold(
+      body: ListView(
         children: [
           const UserAccountsDrawerHeader(
             accountName: Text(
@@ -141,7 +142,7 @@ class MenuLateral extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.image_aspect_ratio_rounded),
+            leading: const Icon(Icons.filter),
             title: const Text("Ejercicio 8"),
             onTap: () {
               Navigator.push(
@@ -151,7 +152,7 @@ class MenuLateral extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.image_aspect_ratio_rounded),
+            leading: const Icon(Icons.phonelink),
             title: const Text("Ejercicio 9"),
             onTap: () {
               Navigator.push(
@@ -161,7 +162,7 @@ class MenuLateral extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.abc),
+            leading: Icon(Icons.exposure),
             title: Text("Ejercicio 10"),
             onTap: () {
               Navigator.push(
@@ -171,12 +172,22 @@ class MenuLateral extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.abc),
+            leading: Icon(Icons.live_tv),
             title: Text("Ejercicio 11"),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => const PaginaInstagram()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.brush),
+            title: Text("Ejercicio 12"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const RandomColors()),
               );
             },
           ),

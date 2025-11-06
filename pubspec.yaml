@@ -76,14 +76,6 @@ flutter:
     - assets/screens11/destacadas/comida.jpg
     - assets/screens11/destacadas/humanos.jpg
     - assets/screens11/destacadas/paseo.jpg
-  
-  dev_dependencies:
-  flutter_launcher_icons: ^0.13.1
-
-  flutter_launcher_icons:
-  image_path: "assets/iconoPersonalizado.png" 
-  android: true
-  ios: true
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
