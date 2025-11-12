@@ -25,10 +25,10 @@ class PaginaInstagram extends StatelessWidget {
       body: Column(
         children: [
           Header(),
-          // BotonesFalsos(),
-          // Destacadas(),
-          // HeaderFotos(),
-          // Fotos(),
+          BotonesFalsos(),
+          Destacadas(),
+          HeaderFotos(),
+          Fotos(),
         ],
       ),
     );

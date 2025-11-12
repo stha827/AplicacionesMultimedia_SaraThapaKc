@@ -19,7 +19,7 @@ class Destacadas extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(200),
                       child: Image.asset(
-                        'screens11/destacadas/animales.jpg',
+                        './assets/screens11/destacadas/animales.jpg',
                         height: 70,
                         width: 70,
                       ),
@@ -36,7 +36,7 @@ class Destacadas extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(200),
                       child: Image.asset(
-                        'screens11/destacadas/autofoto.jpg',
+                        './assets/screens11/destacadas/autofoto.jpg',
                         height: 70,
                         width: 70,
                       ),
@@ -53,7 +53,7 @@ class Destacadas extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(200),
                       child: Image.asset(
-                        'screens11/destacadas/comida.jpg',
+                        './assets/screens11/destacadas/comida.jpg',
                         height: 70,
                         width: 70,
                       ),
@@ -70,7 +70,7 @@ class Destacadas extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(200),
                       child: Image.asset(
-                        'screens11/destacadas/humanos.jpg',
+                        './assets/screens11/destacadas/humanos.jpg',
                         height: 70,
                         width: 70,
                       ),
@@ -87,7 +87,7 @@ class Destacadas extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(200),
                       child: Image.asset(
-                        'screens11/destacadas/paseo.jpg',
+                        './assets/screens11/destacadas/paseo.jpg',
                         height: 70,
                         width: 70,
                       ),

@@ -71,11 +71,26 @@ flutter:
     - assets/screens5/libro5.jpg
     - assets/screens7/album1.jpg
     - assets/img/banner.jpg
+    - assets/screens11/fotoPerfil.jpg
     - assets/screens11/destacadas/animales.jpg
     - assets/screens11/destacadas/autofoto.jpg
     - assets/screens11/destacadas/comida.jpg
     - assets/screens11/destacadas/humanos.jpg
     - assets/screens11/destacadas/paseo.jpg
+    - assets/screens11/iconos/comprar.png
+    - assets/screens11/iconos/etiquetado.png
+    - assets/screens11/iconos/publicacion.png
+    - assets/screens11/iconos/reels.png
+    - assets/screens11/fotos/foto1.jpg
+    - assets/screens11/fotos/foto2.jpg
+    - assets/screens11/fotos/foto3.jpg
+    - assets/screens11/fotos/foto4.jpg
+    - assets/screens11/fotos/foto5.jpg
+    - assets/screens11/fotos/foto6.jpg
+    - assets/screens11/fotos/foto7.jpg
+    - assets/screens11/fotos/foto8.jpeg
+    - assets/screens11/fotos/foto9.jpeg
+    - assets/screens11/fotos/foto10.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

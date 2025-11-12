@@ -13,18 +13,25 @@ class Header extends StatelessWidget {
           Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 20.0, top: 20),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(200),
+                padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width * 0.05,
+                  top: MediaQuery.of(context).size.height * 0.02,
+                ),
+                child: ClipOval(
                   child: Image.asset(
-                    'screens11/fotoPerfil.jpg',
-                    height: 100,
-                    width: 100,
+                    './assets/screens11/fotoPerfil.jpg',
+                    width: MediaQuery.of(context).size.width * 0.15,
+                    height: MediaQuery.of(context).size.width * 0.15,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
+
               Padding(
-                padding: EdgeInsets.only(left: 30.0, right: 30, top: 20),
+                padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width * 0.08,
+                  top: MediaQuery.of(context).size.height * 0.02,
+                ),
                 child: Column(
                   children: [
                     Text(
@@ -36,7 +43,10 @@ class Header extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 30.0, right: 30, top: 20),
+                padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width * 0.15,
+                  top: MediaQuery.of(context).size.height * 0.02,
+                ),
                 child: Column(
                   children: [
                     Text(
@@ -48,7 +58,10 @@ class Header extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 30.0, right: 30, top: 20),
+                padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width * 0.15,
+                  top: MediaQuery.of(context).size.height * 0.02,
+                ),
                 child: Column(
                   children: [
                     Text(

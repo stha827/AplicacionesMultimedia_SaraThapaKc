@@ -15,7 +15,7 @@ class BotonesFalsos extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 20, top: 15),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 35, vertical: 4),
+                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 4),
                   decoration: BoxDecoration(
                     border: Border.all(color: Color.fromRGBO(0, 0, 0, 0.381)),
                     borderRadius: BorderRadius.circular(4),
@@ -29,7 +29,7 @@ class BotonesFalsos extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 5, top: 15),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 35, vertical: 4),
+                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 4),
 
                   decoration: BoxDecoration(
                     border: Border.all(color: Color.fromRGBO(0, 0, 0, 0.381)),
@@ -44,7 +44,7 @@ class BotonesFalsos extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 5, top: 15),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 45, vertical: 4),
+                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 4),
                   decoration: BoxDecoration(
                     border: Border.all(color: Color.fromRGBO(0, 0, 0, 0.381)),
                     borderRadius: BorderRadius.circular(4),
@@ -58,7 +58,7 @@ class BotonesFalsos extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 5, top: 15, right: 20),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                  padding: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
                   decoration: BoxDecoration(
                     border: Border.all(color: Color.fromRGBO(0, 0, 0, 0.381)),
                     borderRadius: BorderRadius.circular(4),
