@@ -33,20 +33,36 @@ class _ContadorClicsState extends State<ContadorClics> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Contador")),
+      backgroundColor: const Color.fromARGB(255, 255, 215, 239),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(child: Text("Has pulsado", style: TextStyle(fontSize: 55))),
+          Center(
+            child: Text(
+              "Has pulsado",
+              style: TextStyle(
+                fontSize: 45,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(255, 255, 160, 219),
+              ),
+            ),
+          ),
           Center(
             child: Text(
               _veces == 1 ? "$_veces vez" : "$_veces veces",
-              style: TextStyle(fontSize: 40),
+              style: TextStyle(fontSize: 40, color: Colors.white),
             ),
           ),
           ElevatedButton(
             onPressed: _ponerCero,
-            style: ElevatedButton.styleFrom(minimumSize: Size(150, 50)),
-            child: Icon(Icons.exposure_zero),
+            style: ElevatedButton.styleFrom(
+              minimumSize: Size(150, 50),
+              backgroundColor: const Color.fromARGB(255, 255, 202, 243),
+            ),
+            child: Text(
+              "Reset",
+              style: TextStyle(color: const Color.fromARGB(255, 97, 25, 91)),
+            ),
           ),
         ],
       ),
@@ -56,6 +72,7 @@ class _ContadorClicsState extends State<ContadorClics> {
         children: [
           FloatingActionButton(
             onPressed: _incrementar,
+            backgroundColor: Colors.black,
             tooltip: "Incrementar",
             child: const Icon(Icons.add),
           ),

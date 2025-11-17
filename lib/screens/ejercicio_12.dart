@@ -17,11 +17,14 @@ class _RandomColors extends State<RandomColors> {
   int points = 0;
   late String randomName;
   late Color randomColor;
-  var colorNames = ['azul', 'verde', 'naranja'];
+  //Añadimos una variable del tiempo para poder ejecutar el código más adelante
+  late Timer _timer;
+
+  var colorNames = ['rojo', 'morado', 'negro'];
   var colorHex = [
-    const Color(0xFF0000FF),
-    const Color(0xFF00FF00),
-    const Color(0xFFFF914D),
+    const Color.fromARGB(255, 145, 5, 0),
+    const Color.fromARGB(255, 112, 0, 156),
+    const Color.fromARGB(255, 0, 0, 0),
   ];
 
   @override
@@ -29,15 +32,25 @@ class _RandomColors extends State<RandomColors> {
     super.initState();
     getRandomColor();
     getRandomName();
-    timer();
+    startTimer();
   }
 
-  void timer() {
-    Timer.periodic(const Duration(milliseconds: 1000), (timer) {
+  void startTimer() {
+    //Ejecutamos la función cada segundo
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      //Comprobamos si el widget todavía sigue activo
+      if (!mounted) return;
       getRandomColor();
       getRandomName();
       setState(() {});
     });
+  }
+
+  // Creamos un método para que el widget se elimine automáticamente y podamos quitar el error
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 
   @override
@@ -91,12 +104,12 @@ class _RandomColors extends State<RandomColors> {
   }
 
   String hexToStringConverter(Color hexColor) {
-    if (hexColor == const Color(0xFF0000FF)) {
-      return 'azul';
-    } else if (hexColor == const Color(0xFF00FF00)) {
-      return 'verde';
+    if (hexColor == const Color.fromARGB(255, 145, 5, 0)) {
+      return 'rojo';
+    } else if (hexColor == const Color.fromARGB(255, 112, 0, 156)) {
+      return 'morado';
     } else {
-      return 'naranja';
+      return 'negro';
     }
   }
 

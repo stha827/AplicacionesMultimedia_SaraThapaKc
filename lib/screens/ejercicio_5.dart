@@ -12,25 +12,35 @@ class ImagenesScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: const [
-            Image(
-              image: AssetImage("./assets/screens5/libro1.jpg"),
-              height: 150,
+            Expanded(
+              child: Image(
+                image: AssetImage("./assets/screens5/libro1.jpg"),
+                height: 150,
+              ),
             ),
-            Image(
-              image: AssetImage("./assets/screens5/libro2.jpg"),
-              height: 150,
+            Expanded(
+              child: Image(
+                image: AssetImage("./assets/screens5/libro2.jpg"),
+                height: 150,
+              ),
             ),
-            Image(
-              image: AssetImage("./assets/screens5/libro3.jpg"),
-              height: 150,
+            Expanded(
+              child: Image(
+                image: AssetImage("./assets/screens5/libro3.jpg"),
+                height: 150,
+              ),
             ),
-            Image(
-              image: AssetImage("./assets/screens5/libro4.jpg"),
-              height: 150,
+            Expanded(
+              child: Image(
+                image: AssetImage("./assets/screens5/libro4.jpg"),
+                height: 150,
+              ),
             ),
-            Image(
-              image: AssetImage("./assets/screens5/libro5.jpg"),
-              height: 150,
+            Expanded(
+              child: Image(
+                image: AssetImage("./assets/screens5/libro5.jpg"),
+                height: 150,
+              ),
             ),
           ],
         ),

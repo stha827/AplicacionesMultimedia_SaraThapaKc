@@ -1,39 +1,118 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
+import 'dart:async';
 
-class PaginaInstagram extends StatelessWidget {
-  const PaginaInstagram({super.key});
+void main() {
+  runApp(const ImagenesAleatorias());
+}
+
+class ImagenesAleatorias extends StatefulWidget {
+  const ImagenesAleatorias({super.key});
+
+  @override
+  State<ImagenesAleatorias> createState() => _RandomColors();
+}
+
+class _RandomColors extends State<ImagenesAleatorias> {
+  late double randomX;
+  late double randomY;
+  int points = 0;
+  late Image randomImage;
+  late Timer _timer;
+
+  var imagenes = [
+    './assets/screens13/img1.jpg',
+    './assets/screens13/img2.jpg',
+    './assets/screens13/img3.jpg',
+    './assets/screens13/img4.jpg',
+    './assets/screens13/img5.jpg',
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    getRandomImage();
+    startTimer();
+  }
+
+  void startTimer() {
+    //Ejecutamos la función cada segundo
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      //Comprobamos si el widget todavía sigue activo
+      if (!mounted) return;
+      getRandomImage();
+      setState(() {});
+    });
+  }
+
+  // Creamos un método para que el widget se elimine automáticamente y podamos quitar el error
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    generateRandomPosition(context);
     return Scaffold(
-      appBar: AppBar(title: const Text("Mi Reto")),
+      appBar: AppBar(title: Text("Contador")),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
           children: [
-            const Image(
-              image: AssetImage("./assets/screens1/imagen_representativa.jpg"),
-              width: 350,
-              height: 350,
-              fit: BoxFit.cover,
-            ),
-            Container(
-              margin: const EdgeInsets.all(10),
-              padding: const EdgeInsets.all(20),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 143, 206, 250),
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(50.0),
-                  bottomLeft: Radius.circular(50.0),
+            Align(
+              alignment: Alignment.topRight, // ← lo coloca a la izquierda
+              child: Text(
+                'Puntos: $points   ',
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
                 ),
               ),
-              child: const Text(
-                "Sara Thapa Kc",
-                style: TextStyle(fontSize: 25, color: Colors.black),
+            ),
+            Center(
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: randomY,
+                    left: randomX,
+                    child: GestureDetector(
+                      onTap: () {
+                        onGiftTap(randomImage);
+                      },
+                      child: SizedBox(
+                        width: 150,
+                        height: 150,
+                        child: randomImage,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
         ),
       ),
     );
+  }
+
+  void getRandomImage() {
+    Random random = Random();
+    int randomNumber = random.nextInt(imagenes.length);
+    randomImage = Image.asset(imagenes[randomNumber]);
+  }
+
+  void generateRandomPosition(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final maxWidth = size.width - 150;
+    final maxHeight = size.height - 150;
+
+    randomX = Random().nextDouble() * maxWidth;
+    randomY = Random().nextDouble() * maxHeight;
+  }
+
+  void onGiftTap(Image image) {
+    points++;
+    setState(() {});
   }
 }
