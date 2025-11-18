@@ -20,19 +20,64 @@ class _RandomColors extends State<RandomColors> {
   //Añadimos una variable del tiempo para poder ejecutar el código más adelante
   late Timer _timer;
 
-  var colorNames = ['rojo', 'morado', 'negro'];
+  var colorNames = ['rojo', 'morado', 'negro', 'azul'];
   var colorHex = [
     const Color.fromARGB(255, 145, 5, 0),
     const Color.fromARGB(255, 112, 0, 156),
     const Color.fromARGB(255, 0, 0, 0),
+    const Color.fromARGB(255, 0, 29, 90),
   ];
+
+  void getRandomColor() {
+    Random random = Random();
+    int randomNumber = random.nextInt(4);
+    randomColor = colorHex[randomNumber];
+  }
+
+  void getRandomName() {
+    Random random = Random();
+    int randomNumber = random.nextInt(4);
+    randomName = colorNames[randomNumber];
+  }
+
+  String hexToStringConverter(Color hexColor) {
+    if (hexColor == const Color.fromARGB(255, 145, 5, 0)) {
+      return 'rojo';
+    } else if (hexColor == const Color.fromARGB(255, 112, 0, 156)) {
+      return 'morado';
+    } else if (hexColor == const Color.fromARGB(255, 0, 0, 0)) {
+      return 'negro';
+    } else {
+      return 'azul';
+    }
+  }
+
+  void onGiftTap(String name, Color color) {
+    var colorToString = hexToStringConverter(color);
+    if (name == colorToString) {
+      points++;
+    } else {
+      points--;
+    }
+    setState(() {});
+  }
+
+  _reset() {
+    setState(() {
+      points = 0;
+    });
+    _timer.cancel();
+  }
+
+  _start() {
+    startTimer();
+  }
 
   @override
   void initState() {
     super.initState();
     getRandomColor();
     getRandomName();
-    startTimer();
   }
 
   void startTimer() {
@@ -57,6 +102,7 @@ class _RandomColors extends State<RandomColors> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Contador")),
+      backgroundColor: const Color.fromARGB(255, 231, 231, 231),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -81,6 +127,50 @@ class _RandomColors extends State<RandomColors> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    Padding(
+                      padding: EdgeInsets.all(50),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: _start,
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: Size(150, 50),
+                              backgroundColor: const Color.fromARGB(
+                                255,
+                                255,
+                                255,
+                                255,
+                              ),
+                            ),
+                            child: Text(
+                              "Start",
+                              style: TextStyle(
+                                color: const Color.fromARGB(255, 0, 0, 0),
+                              ),
+                            ),
+                          ),
+                          ElevatedButton(
+                            onPressed: _reset,
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: Size(150, 50),
+                              backgroundColor: const Color.fromARGB(
+                                255,
+                                46,
+                                46,
+                                46,
+                              ),
+                            ),
+                            child: Text(
+                              "Reset",
+                              style: TextStyle(
+                                color: const Color.fromARGB(255, 255, 255, 255),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -89,37 +179,5 @@ class _RandomColors extends State<RandomColors> {
         ),
       ),
     );
-  }
-
-  void getRandomColor() {
-    Random random = Random();
-    int randomNumber = random.nextInt(3);
-    randomColor = colorHex[randomNumber];
-  }
-
-  void getRandomName() {
-    Random random = Random();
-    int randomNumber = random.nextInt(3);
-    randomName = colorNames[randomNumber];
-  }
-
-  String hexToStringConverter(Color hexColor) {
-    if (hexColor == const Color.fromARGB(255, 145, 5, 0)) {
-      return 'rojo';
-    } else if (hexColor == const Color.fromARGB(255, 112, 0, 156)) {
-      return 'morado';
-    } else {
-      return 'negro';
-    }
-  }
-
-  void onGiftTap(String name, Color color) {
-    var colorToString = hexToStringConverter(color);
-    if (name == colorToString) {
-      points++;
-    } else {
-      points--;
-    }
-    setState(() {});
   }
 }

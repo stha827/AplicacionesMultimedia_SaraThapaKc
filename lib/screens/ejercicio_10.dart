@@ -50,18 +50,18 @@ class _ContadorClicsState extends State<ContadorClics> {
           Center(
             child: Text(
               _veces == 1 ? "$_veces vez" : "$_veces veces",
-              style: TextStyle(fontSize: 40, color: Colors.white),
+              style: TextStyle(fontSize: 40, color: Colors.black),
             ),
           ),
           ElevatedButton(
             onPressed: _ponerCero,
             style: ElevatedButton.styleFrom(
               minimumSize: Size(150, 50),
-              backgroundColor: const Color.fromARGB(255, 255, 202, 243),
+              backgroundColor: const Color.fromARGB(255, 0, 0, 0),
             ),
             child: Text(
               "Reset",
-              style: TextStyle(color: const Color.fromARGB(255, 97, 25, 91)),
+              style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
             ),
           ),
         ],
@@ -72,15 +72,16 @@ class _ContadorClicsState extends State<ContadorClics> {
         children: [
           FloatingActionButton(
             onPressed: _incrementar,
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.white,
             tooltip: "Incrementar",
-            child: const Icon(Icons.add),
+            child: const Icon(Icons.add, color: Colors.black),
           ),
           const SizedBox(height: 10),
           FloatingActionButton(
             onPressed: _restar,
+            backgroundColor: Colors.white,
             tooltip: "Restar",
-            child: Icon(Icons.remove),
+            child: Icon(Icons.remove, color: Colors.black),
           ),
         ],
       ),

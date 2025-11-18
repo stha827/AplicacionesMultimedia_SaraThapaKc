@@ -28,6 +28,26 @@ class _RandomColors extends State<ImagenesAleatorias> {
     './assets/screens13/img5.jpg',
   ];
 
+  void getRandomImage() {
+    Random random = Random();
+    int randomNumber = random.nextInt(imagenes.length);
+    randomImage = Image.asset(imagenes[randomNumber]);
+  }
+
+  void generateRandomPosition(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final maxWidth = size.width - 150;
+    final maxHeight = size.height - 150;
+
+    randomX = Random().nextDouble() * maxWidth;
+    randomY = Random().nextDouble() * maxHeight;
+  }
+
+  void onGiftTap(Image image) {
+    points++;
+    setState(() {});
+  }
+
   @override
   void initState() {
     super.initState();
@@ -61,13 +81,24 @@ class _RandomColors extends State<ImagenesAleatorias> {
         child: Stack(
           children: [
             Align(
-              alignment: Alignment.topRight, // ← lo coloca a la izquierda
-              child: Text(
-                'Puntos: $points   ',
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
-                ),
+              alignment: Alignment.topCenter,
+              child: Column(
+                children: [
+                  Text(
+                    '$points',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  ),
+                  Text(
+                    'Puntos',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  ),
+                ],
               ),
             ),
             Center(
@@ -94,25 +125,5 @@ class _RandomColors extends State<ImagenesAleatorias> {
         ),
       ),
     );
-  }
-
-  void getRandomImage() {
-    Random random = Random();
-    int randomNumber = random.nextInt(imagenes.length);
-    randomImage = Image.asset(imagenes[randomNumber]);
-  }
-
-  void generateRandomPosition(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final maxWidth = size.width - 150;
-    final maxHeight = size.height - 150;
-
-    randomX = Random().nextDouble() * maxWidth;
-    randomY = Random().nextDouble() * maxHeight;
-  }
-
-  void onGiftTap(Image image) {
-    points++;
-    setState(() {});
   }
 }
