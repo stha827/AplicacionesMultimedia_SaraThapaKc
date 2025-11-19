@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import '../drawer.dart';
 
 class TextosFilas extends StatelessWidget {
   const TextosFilas({super.key});
@@ -10,6 +11,7 @@ class TextosFilas extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Textos con diferentes fuentes")),
+      drawer: const MyDrawer(),
       body: Column(
         children: <Widget>[
           // Esta se trata de una fila normal con una fuente por defecto

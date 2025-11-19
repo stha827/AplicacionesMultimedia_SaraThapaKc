@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../drawer.dart';
 
 // Pantalla de Miniaturas en una columna
 class MiniaturasScreen extends StatelessWidget {
@@ -8,6 +9,7 @@ class MiniaturasScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Miniaturas")),
+      drawer: const MyDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

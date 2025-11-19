@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../drawer.dart';
 
 // Añadimos una pantalla que muestra imágenes en una columna
 class ImagenesScreen extends StatelessWidget {
@@ -8,6 +9,7 @@ class ImagenesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Imágenes en columnas")),
+      drawer: const MyDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

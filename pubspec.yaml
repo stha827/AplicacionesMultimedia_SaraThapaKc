@@ -96,6 +96,7 @@ flutter:
     - assets/screens13/img3.jpg
     - assets/screens13/img4.jpg
     - assets/screens13/img5.jpg
+    - assets/screens14/foto.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

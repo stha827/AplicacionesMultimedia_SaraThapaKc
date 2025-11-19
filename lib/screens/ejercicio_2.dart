@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../drawer.dart';
 
 // Añadimos una imagen nuestra que nos represente justo con nuestro nombre
 class FotoScreen extends StatelessWidget {
@@ -8,12 +9,14 @@ class FotoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Mi foto")),
+      drawer: const MyDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Image(image:  AssetImage("./assets/screens1/imagen_representativa.jpg"),
-            fit: BoxFit.cover,
+            Image(
+              image: AssetImage("./assets/screens1/imagen_representativa.jpg"),
+              fit: BoxFit.cover,
             ),
             Text("Sara Thapa Kc", style: TextStyle(fontSize: 22)),
           ],

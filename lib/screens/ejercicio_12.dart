@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
+import '../drawer.dart';
 
 void main() {
   runApp(const RandomColors());
@@ -102,6 +103,7 @@ class _RandomColors extends State<RandomColors> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Contador")),
+      drawer: const MyDrawer(),
       backgroundColor: const Color.fromARGB(255, 231, 231, 231),
       body: Center(
         child: Column(
@@ -142,6 +144,8 @@ class _RandomColors extends State<RandomColors> {
                                 255,
                                 255,
                               ),
+                              shadowColor: const Color.fromARGB(255, 0, 0, 0),
+                              elevation: 15,
                             ),
                             child: Text(
                               "Start",
@@ -160,6 +164,8 @@ class _RandomColors extends State<RandomColors> {
                                 46,
                                 46,
                               ),
+                              shadowColor: const Color.fromARGB(255, 0, 0, 0),
+                              elevation: 15,
                             ),
                             child: Text(
                               "Reset",

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../drawer.dart';
 
 class IconosScreen extends StatelessWidget {
   const IconosScreen({super.key});
@@ -7,6 +8,7 @@ class IconosScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Iconos")),
+      drawer: const MyDrawer(),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

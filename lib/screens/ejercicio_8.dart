@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../drawer.dart';
 
 class ImagenesResponsive extends StatelessWidget {
   const ImagenesResponsive({super.key});
@@ -7,6 +8,7 @@ class ImagenesResponsive extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Filas y Columnas Anidadas")),
+      drawer: const MyDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

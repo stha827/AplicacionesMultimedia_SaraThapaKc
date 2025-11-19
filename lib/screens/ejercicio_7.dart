@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../drawer.dart';
 
 class ImagenesRepetidas extends StatelessWidget {
   const ImagenesRepetidas({super.key});
@@ -7,6 +8,7 @@ class ImagenesRepetidas extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Imágenes repetidas")),
+      drawer: const MyDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

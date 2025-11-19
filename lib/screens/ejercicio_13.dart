@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
+import '../drawer.dart';
 
 void main() {
   runApp(const ImagenesAleatorias());
@@ -77,6 +78,7 @@ class _RandomColors extends State<ImagenesAleatorias> {
     generateRandomPosition(context);
     return Scaffold(
       appBar: AppBar(title: Text("Contador")),
+      drawer: const MyDrawer(),
       body: Center(
         child: Stack(
           children: [
