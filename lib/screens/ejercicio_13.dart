@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
-import '../drawer.dart';
+import 'drawer.dart';
 
 void main() {
   runApp(const ImagenesAleatorias());

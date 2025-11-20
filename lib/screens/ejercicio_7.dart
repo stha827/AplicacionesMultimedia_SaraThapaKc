@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../drawer.dart';
+import 'drawer.dart';
 
 class ImagenesRepetidas extends StatelessWidget {
   const ImagenesRepetidas({super.key});

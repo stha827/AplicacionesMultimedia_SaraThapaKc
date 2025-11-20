@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../drawer.dart';
+import 'drawer.dart';
 
 class IconosScreen extends StatelessWidget {
   const IconosScreen({super.key});

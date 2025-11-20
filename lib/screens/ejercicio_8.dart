@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../drawer.dart';
+import 'drawer.dart';
 
 class ImagenesResponsive extends StatelessWidget {
   const ImagenesResponsive({super.key});

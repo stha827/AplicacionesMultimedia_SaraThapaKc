@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../drawer.dart';
+import 'drawer.dart';
 
 // Pantalla de Información con nombre y enlace al repositorio
 class InfoScreen extends StatelessWidget {

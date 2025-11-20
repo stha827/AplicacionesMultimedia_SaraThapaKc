@@ -1,7 +1,8 @@
+import 'package:ejericio1_sarathapa/screens/splash_screens.dart';
 import 'package:flutter/material.dart';
 
 // Importamos las pantallas desde la carpeta screens
-import 'drawer.dart';
+import 'screens/drawer.dart';
 
 void main() {
   runApp(const MiApp());
@@ -13,10 +14,10 @@ class MiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Drawer Personalizado',
+      title: 'Drawer ejercicios',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.indigo),
-      home: const PaginaInicio(),
+      home: const SplashScreen(),
     );
   }
 }

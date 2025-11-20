@@ -1,6 +1,6 @@
 // dark_theme.dart
 import 'package:flutter/material.dart';
-import '../drawer.dart';
+import 'drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DarkTheme extends StatefulWidget {
@@ -40,10 +40,11 @@ final _lightTheme = ThemeData(
     backgroundColor: Color.fromARGB(0, 0, 0, 0),
     foregroundColor: Color.fromARGB(255, 0, 0, 0),
   ),
-  colorScheme: const ColorScheme.light(surface: Color.fromARGB(255, 0, 0, 0)),
+  colorScheme: const ColorScheme.light(
+    surface: Color.fromARGB(255, 255, 255, 255),
+  ),
   textTheme: const TextTheme(
     bodyMedium: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
-    titleLarge: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
   ),
 );
 
@@ -56,12 +57,9 @@ final _darkTheme = ThemeData(
     backgroundColor: Color.fromARGB(0, 0, 150, 135),
     foregroundColor: Color.fromARGB(255, 255, 255, 255),
   ),
-  colorScheme: const ColorScheme.dark(
-    surface: Color.fromARGB(255, 255, 248, 224),
-  ),
+  colorScheme: const ColorScheme.dark(surface: Color.fromARGB(255, 0, 0, 0)),
   textTheme: const TextTheme(
     bodyMedium: TextStyle(color: Color.fromARGB(255, 255, 248, 224)),
-    titleLarge: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
   ),
 );
 
@@ -105,7 +103,7 @@ class HomeScreen extends StatelessWidget {
                   "CRIMINAL 01   |    ALTO RIESGO    |    14 SEP 2025",
                   style: GoogleFonts.rye(
                     fontSize: 14,
-                    textStyle: Theme.of(context).textTheme.titleLarge,
+                    textStyle: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),
               ),
@@ -124,12 +122,12 @@ class HomeScreen extends StatelessWidget {
                 color: Theme.of(context).colorScheme.surface,
               ),
               child: Padding(
-                padding: EdgeInsetsGeometry.only(top: 9, left: 20),
+                padding: EdgeInsetsGeometry.only(top: 9, left: 17),
                 child: Text(
                   "\$1.234,56 RECOMPENSA",
                   style: GoogleFonts.rye(
                     fontSize: 25,
-                    textStyle: Theme.of(context).textTheme.titleLarge,
+                    textStyle: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),
               ),
@@ -139,7 +137,10 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 mostrarAlertDialog(context);
               },
-              child: const Text('Más información'),
+              child: Text(
+                'Más información',
+                style: GoogleFonts.rye(fontSize: 15),
+              ),
             ),
           ],
         ),
@@ -152,19 +153,29 @@ class HomeScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Información'),
-          content: const SingleChildScrollView(
+          backgroundColor: Theme.of(context).colorScheme.surface,
+          title: Text(
+            'Información',
+            style: GoogleFonts.rye(
+              fontSize: 20,
+              textStyle: Theme.of(context).textTheme.bodyMedium,
+            ),
+          ),
+          content: SingleChildScrollView(
             child: Text(
-              'Este es un mensaje de alerta',
-              style: TextStyle(fontSize: 60),
+              'Ladra mucho.\nLe encantan las salchichas.\nLlama al +33 123456789 si tienes datos de su paradero.',
+              style: GoogleFonts.rye(
+                fontSize: 14,
+                textStyle: Theme.of(context).textTheme.bodyMedium,
+              ),
             ),
           ),
           actions: <Widget>[
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Cerrar el AlertDialog
+                Navigator.of(context).pop();
               },
-              child: const Text('Okay'),
+              child: Text('Okay', style: GoogleFonts.rye(fontSize: 15)),
             ),
           ],
         );

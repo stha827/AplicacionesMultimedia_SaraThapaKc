@@ -1,21 +1,20 @@
 import 'package:ejericio1_sarathapa/screens/ejercicio_10.dart';
-import 'package:ejericio1_sarathapa/screens/prueba.dart';
 import 'package:flutter/material.dart';
 
 // Importamos las pantallas desde la carpeta screens
-import 'screens/ejercicio_1.dart';
-import 'screens/ejercicio_2.dart';
-import 'screens/ejercicio_3.dart';
-import 'screens/ejercicio_4.dart';
-import 'screens/ejercicio_5.dart';
-import 'screens/ejercicio_6.dart';
-import 'screens/ejercicio_7.dart';
-import 'screens/ejercicio_8.dart';
-import 'screens/ejercicio_9.dart';
-import 'screens/ejercicio11/ejercicio_11.dart';
-import 'screens/ejercicio_12.dart';
-import 'screens/ejercicio_13.dart';
-import 'screens/ejercicio_14.dart';
+import 'ejercicio_1.dart';
+import 'ejercicio_2.dart';
+import 'ejercicio_3.dart';
+import 'ejercicio_4.dart';
+import 'ejercicio_5.dart';
+import 'ejercicio_6.dart';
+import 'ejercicio_7.dart';
+import 'ejercicio_8.dart';
+import 'ejercicio_9.dart';
+import 'ejercicio11/ejercicio_11.dart';
+import 'ejercicio_12.dart';
+import 'ejercicio_13.dart';
+import 'ejercicio_14.dart';
 
 // Widget para el menú lateral (Drawer)
 class MyDrawer extends StatelessWidget {
@@ -179,16 +178,6 @@ class MyDrawer extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => const DarkTheme()),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.brightness_6),
-            title: Text("Ejercicio p"),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const P()),
               );
             },
           ),
