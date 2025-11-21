@@ -1,6 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:ejericio1_sarathapa/main.dart';
 import 'package:flutter/material.dart';
+import '../main.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -14,8 +14,8 @@ class SplashScreen extends StatelessWidget {
         splashIconSize: 2000.0,
         centered: true,
         nextScreen: const PaginaInicio(),
-        backgroundColor: Colors.black,
-        duration: 3100,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        duration: 1300,
       ),
     );
   }

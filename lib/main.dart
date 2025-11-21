@@ -1,4 +1,4 @@
-import 'package:ejericio1_sarathapa/screens/splash_screens.dart';
+import 'package:ejercicios/screens/splash_screens.dart';
 import 'package:flutter/material.dart';
 
 // Importamos las pantallas desde la carpeta screens

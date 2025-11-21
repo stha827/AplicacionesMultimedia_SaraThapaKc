@@ -1,4 +1,4 @@
-name: ejericio1_sarathapa
+name: ejercicios
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -79,6 +79,7 @@ flutter:
     - assets/screens5/libro5.jpg
     - assets/screens7/album1.jpg
     - assets/img/banner.jpg
+    - assets/logoAnimado.gif
     - assets/screens11/fotoPerfil.jpg
     - assets/screens11/destacadas/animales.jpg
     - assets/screens11/destacadas/autofoto.jpg

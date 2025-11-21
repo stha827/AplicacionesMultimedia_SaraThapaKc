@@ -1,4 +1,4 @@
-package com.example.ejericio1_sarathapa
+package com.example.ejercicios
 
 import io.flutter.embedding.android.FlutterActivity
 

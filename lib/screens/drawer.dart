@@ -1,4 +1,3 @@
-import 'package:ejericio1_sarathapa/screens/ejercicio_10.dart';
 import 'package:flutter/material.dart';
 
 // Importamos las pantallas desde la carpeta screens
@@ -11,6 +10,7 @@ import 'ejercicio_6.dart';
 import 'ejercicio_7.dart';
 import 'ejercicio_8.dart';
 import 'ejercicio_9.dart';
+import 'ejercicio_10.dart';
 import 'ejercicio11/ejercicio_11.dart';
 import 'ejercicio_12.dart';
 import 'ejercicio_13.dart';
