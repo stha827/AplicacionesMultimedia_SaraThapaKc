@@ -29,9 +29,10 @@ class PaginaInicio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Drawer Personalizado")),
+      appBar: AppBar(title: const Text("Drawer ejercicios")),
       drawer: const MyDrawer(),
       body: const Center(child: Text("Abre el menú lateral para navegar")),
+      backgroundColor: const Color.fromARGB(255, 252, 217, 255),
     );
   }
 }

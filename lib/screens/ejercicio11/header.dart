@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
+
   @override
   Widget build(BuildContext context) {
     int posts = 6;
     int followers = 3333;
     int following = 4000;
+    final Uri enlace = Uri.parse(
+      'https://www.protectoramalaga.com/perros-en-adopcion/1/',
+    );
+
     return Container(
       child: Column(
         children: [
@@ -92,7 +98,23 @@ class Header extends StatelessWidget {
                   ),
                   Text("Soy de Nerja 🏖️"),
                   Text("Tengo 7 añitos 🐶"),
-                  Text("#woofwoof", style: TextStyle(color: Colors.indigo)),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      minimumSize: Size(0, 0), // evita tamaño mínimo
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
+                    onPressed: () async {
+                      await launchUrl(enlace);
+                    },
+                    child: Text(
+                      "Adopta aquí",
+                      style: TextStyle(
+                        color: Colors.indigo,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

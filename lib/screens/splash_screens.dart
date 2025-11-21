@@ -10,12 +10,12 @@ class SplashScreen extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen(
-        splash: 'assets/logoAnimado.gif',
+        splash: 'assets/img/logoAnimado.gif',
         splashIconSize: 2000.0,
         centered: true,
         nextScreen: const PaginaInicio(),
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        duration: 1300,
+        duration: 1200,
       ),
     );
   }
@@ -23,22 +23,14 @@ class SplashScreen extends StatelessWidget {
 
 class Home extends StatelessWidget {
   const Home({super.key});
-  // Creamos una pantalla que muestra imágenes repetidas en filas y columnas de forma responsive
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('assets/logoAnimado.gif', width: 65.9),
-            const Text(
-              "True Splash Screen Tutorial",
-              textAlign: TextAlign.center,
-              style: TextStyle(),
-            ),
-          ],
+          children: [Image.asset('assets/logoAnimado.gif', width: 65.9)],
         ),
       ),
     );
