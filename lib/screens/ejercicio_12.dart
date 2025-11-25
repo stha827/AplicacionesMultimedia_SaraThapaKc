@@ -20,7 +20,7 @@ class _RandomColors extends State<RandomColors> {
   late String randomName;
   late Color randomColor;
   //Añadimos una variable del tiempo para poder ejecutar el código más adelante
-  late Timer _timer;
+  late Timer _timer = Timer(const Duration(seconds: 0), () {});
 
   //Creamos arrays de los colores y nombre de estos
   var colorNames = ['rojo', 'morado', 'negro', 'azul'];
@@ -71,7 +71,7 @@ class _RandomColors extends State<RandomColors> {
   }
 
   //Funcion para resetear a 0 y parar el juego
-  _reset() {
+  _stop() {
     setState(() {
       points = 0;
     });
@@ -93,6 +93,7 @@ class _RandomColors extends State<RandomColors> {
 
   // Función para empezar
   void startTimer() {
+    _timer.cancel();
     //Ejecutamos la función cada segundo
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       //Comprobamos si el widget todavía sigue activo
@@ -166,7 +167,7 @@ class _RandomColors extends State<RandomColors> {
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: _reset,
+                            onPressed: _stop,
                             style: ElevatedButton.styleFrom(
                               minimumSize: Size(150, 50),
                               backgroundColor: const Color.fromARGB(
@@ -179,7 +180,7 @@ class _RandomColors extends State<RandomColors> {
                               elevation: 15,
                             ),
                             child: Text(
-                              "Reset",
+                              "Stop",
                               style: TextStyle(
                                 color: const Color.fromARGB(255, 255, 255, 255),
                               ),
