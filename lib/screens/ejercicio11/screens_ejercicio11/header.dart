@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+//Pantalla 1, contiene el numero de seguidores y la biografía
 class Header extends StatelessWidget {
   const Header({super.key});
-
   @override
   Widget build(BuildContext context) {
+    // Variables
     int posts = 6;
     int followers = 3333;
     int following = 4000;
@@ -80,6 +81,7 @@ class Header extends StatelessWidget {
               ),
             ],
           ),
+          // BIOGRAFÍA
           // Utilizamos SizedBox ya que sirve mejor que un Container para separar widgets y crear espacio
           SizedBox(
             width: double.infinity,

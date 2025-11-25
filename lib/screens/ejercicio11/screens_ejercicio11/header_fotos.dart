@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Pantalla 4, se trata de las opciones de publicación, reels, compra y etiquetados
 class HeaderFotos extends StatelessWidget {
   const HeaderFotos({super.key});
   @override

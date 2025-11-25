@@ -1,10 +1,11 @@
-import 'fotos.dart';
-import 'destacadas.dart';
+import 'screens_ejercicio11/fotos.dart';
+import 'screens_ejercicio11/destacadas.dart';
 import 'package:flutter/material.dart';
-import 'header.dart';
-import 'botonesFalsos.dart';
-import 'header_fotos.dart';
+import 'screens_ejercicio11/header.dart';
+import 'screens_ejercicio11/botonesFalsos.dart';
+import 'screens_ejercicio11/header_fotos.dart';
 
+//Pantalla principal que va a llamar a cada subpantalla
 class PaginaInstagram extends StatelessWidget {
   const PaginaInstagram({super.key});
   @override

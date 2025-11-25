@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'drawer.dart';
+import '../drawer/drawer.dart';
 
+// Pantalla que muestra imágenes repetidas en filas y columnas de forma responsive
 class ImagenesResponsive extends StatelessWidget {
   const ImagenesResponsive({super.key});
-  // Creamos una pantalla que muestra imágenes repetidas en filas y columnas de forma responsive
   @override
   Widget build(BuildContext context) {
     return Scaffold(

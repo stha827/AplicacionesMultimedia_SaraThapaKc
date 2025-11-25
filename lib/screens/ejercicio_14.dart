@@ -1,8 +1,8 @@
-// dark_theme.dart
 import 'package:flutter/material.dart';
-import 'drawer.dart';
+import '../drawer/drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// Pantalla que implementa un tema oscuro y un tema claro
 class DarkTheme extends StatefulWidget {
   const DarkTheme({super.key});
 
@@ -12,11 +12,9 @@ class DarkTheme extends StatefulWidget {
 
 class DarkThemeState extends State<DarkTheme> {
   bool isDarkMode = false;
-
   @override
   Widget build(BuildContext context) {
     final theme = isDarkMode ? _darkTheme : _lightTheme;
-
     return Theme(
       data: theme,
       child: HomeScreen(
@@ -53,6 +51,7 @@ final _darkTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: const Color.fromARGB(255, 255, 255, 255),
   scaffoldBackgroundColor: const Color.fromARGB(255, 48, 48, 48),
+
   appBarTheme: const AppBarTheme(
     backgroundColor: Color.fromARGB(0, 0, 150, 135),
     foregroundColor: Color.fromARGB(255, 255, 255, 255),
@@ -109,7 +108,6 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 40),
-
             Image(
               image: AssetImage("assets/screens14/foto.jpg"),
               width: MediaQuery.of(context).size.width * 0.60,
@@ -148,6 +146,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  //Diálogo de más información
   void mostrarAlertDialog(BuildContext context) {
     showDialog(
       context: context,

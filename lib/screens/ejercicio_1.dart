@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'drawer.dart';
+import '../drawer/drawer.dart';
 
 // Pantalla de Información con nombre y enlace al repositorio
 class InfoScreen extends StatelessWidget {
   const InfoScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
+    //Función guardada como enlace para utilizar más adelante
     final Uri repoUrl = Uri.parse(
       'https://github.com/stha827/AplicacionesMultimedia_SaraThapaKc',
     );

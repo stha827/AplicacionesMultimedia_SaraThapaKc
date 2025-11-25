@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'drawer.dart';
+import '../drawer/drawer.dart';
 
 // Añadimos una pantalla que muestra imágenes en una columna
 class ImagenesScreen extends StatelessWidget {
   const ImagenesScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,8 +1,7 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'drawer.dart';
+import '../drawer/drawer.dart';
 
+// Pantalla con un contador de clicks
 class ContadorClics extends StatefulWidget {
   const ContadorClics({super.key});
   @override
@@ -12,18 +11,22 @@ class ContadorClics extends StatefulWidget {
 class _ContadorClicsState extends State<ContadorClics> {
   int _veces = 0;
 
+  // FUNCIONES
+  // Incrementa el valor de la variable
   _incrementar() {
     setState(() {
       _veces++;
     });
   }
 
+  // Resta el valor de la variable
   _restar() {
     setState(() {
       _veces--;
     });
   }
 
+  // Pone a 0 el valor de la variable
   _ponerCero() {
     setState(() {
       _veces = 0;
@@ -55,6 +58,7 @@ class _ContadorClicsState extends State<ContadorClics> {
               style: TextStyle(fontSize: 40, color: Colors.black),
             ),
           ),
+          //Botón debajo del texto
           ElevatedButton(
             onPressed: _ponerCero,
             style: ElevatedButton.styleFrom(
@@ -70,7 +74,7 @@ class _ContadorClicsState extends State<ContadorClics> {
           ),
         ],
       ),
-
+      //Botones flotantes de la esquina inferior derecha
       floatingActionButton: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

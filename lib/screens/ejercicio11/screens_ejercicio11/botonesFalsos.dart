@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
+// Pantalla 2, se trata de los "botones" falsos de Instagram
 class BotonesFalsos extends StatelessWidget {
   const BotonesFalsos({super.key});
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Utilizamos SizedBox ya que sirve mejor que un Container para separar widgets y crear espacio
         SizedBox(
           width: double.infinity,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              //Botón 1
               Padding(
                 padding: EdgeInsets.only(left: 20, top: 15),
                 child: Container(
@@ -26,6 +27,7 @@ class BotonesFalsos extends StatelessWidget {
                   ),
                 ),
               ),
+              //Botón 2
               Padding(
                 padding: EdgeInsets.only(left: 5, top: 15),
                 child: Container(
@@ -41,6 +43,7 @@ class BotonesFalsos extends StatelessWidget {
                   ),
                 ),
               ),
+              //Botón 3
               Padding(
                 padding: EdgeInsets.only(left: 5, top: 15),
                 child: Container(
@@ -55,6 +58,7 @@ class BotonesFalsos extends StatelessWidget {
                   ),
                 ),
               ),
+              //Botón 4
               Padding(
                 padding: EdgeInsets.only(left: 5, top: 15, right: 20),
                 child: Container(

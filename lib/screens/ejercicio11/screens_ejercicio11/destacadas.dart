@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
+//Pantalla 3, dedicada a las destacadascde instagram
 class Destacadas extends StatelessWidget {
   const Destacadas({super.key});
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Utilizamos SizedBox ya que sirve mejor que un Container para separar widgets y crear espacio
         SizedBox(
           height: 120,
+          //Urtilizamos ListView para poder hacer un scroll horizontal en caso de que hayan muchos elementos
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
+              //Destacada 1
               Padding(
                 padding: EdgeInsets.only(left: 20.0, top: 20),
                 child: Column(
@@ -29,6 +31,7 @@ class Destacadas extends StatelessWidget {
                   ],
                 ),
               ),
+              //Destacada 2
               Padding(
                 padding: EdgeInsets.only(left: 40.0, top: 20),
                 child: Column(
@@ -46,6 +49,7 @@ class Destacadas extends StatelessWidget {
                   ],
                 ),
               ),
+              //Destacada 3
               Padding(
                 padding: EdgeInsets.only(left: 40.0, top: 20),
                 child: Column(
@@ -63,6 +67,7 @@ class Destacadas extends StatelessWidget {
                   ],
                 ),
               ),
+              //Destacada 4
               Padding(
                 padding: EdgeInsets.only(left: 40.0, top: 20),
                 child: Column(
@@ -80,6 +85,7 @@ class Destacadas extends StatelessWidget {
                   ],
                 ),
               ),
+              //Destacada 5
               Padding(
                 padding: EdgeInsets.only(left: 40.0, top: 20),
                 child: Column(

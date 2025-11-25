@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'drawer.dart';
+import '../drawer/drawer.dart';
 
+// 3 Textos con distintas fuentes y distintos modos de desbordamiento
 class TextosFilas extends StatelessWidget {
   const TextosFilas({super.key});
-
-  //
   @override
   Widget build(BuildContext context) {
     return Scaffold(

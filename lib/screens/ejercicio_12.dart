@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
-import 'drawer.dart';
+import '../drawer/drawer.dart';
 
+// Pantalla con un juego que se ha mejorado proporcionado por el profesor
 void main() {
   runApp(const RandomColors());
 }
@@ -21,6 +22,7 @@ class _RandomColors extends State<RandomColors> {
   //Añadimos una variable del tiempo para poder ejecutar el código más adelante
   late Timer _timer;
 
+  //Creamos arrays de los colores y nombre de estos
   var colorNames = ['rojo', 'morado', 'negro', 'azul'];
   var colorHex = [
     const Color.fromARGB(255, 145, 5, 0),
@@ -29,18 +31,22 @@ class _RandomColors extends State<RandomColors> {
     const Color.fromARGB(255, 0, 29, 90),
   ];
 
+  //FUNCIONES
+  //Obtenemos un color random
   void getRandomColor() {
     Random random = Random();
     int randomNumber = random.nextInt(4);
     randomColor = colorHex[randomNumber];
   }
 
+  //Obtenemos un nombre random
   void getRandomName() {
     Random random = Random();
     int randomNumber = random.nextInt(4);
     randomName = colorNames[randomNumber];
   }
 
+  //Asignamos los valores
   String hexToStringConverter(Color hexColor) {
     if (hexColor == const Color.fromARGB(255, 145, 5, 0)) {
       return 'rojo';
@@ -53,6 +59,7 @@ class _RandomColors extends State<RandomColors> {
     }
   }
 
+  // Comprobamos si los valores son correctos para sumar puntos o incorrectos para restar
   void onGiftTap(String name, Color color) {
     var colorToString = hexToStringConverter(color);
     if (name == colorToString) {
@@ -63,6 +70,7 @@ class _RandomColors extends State<RandomColors> {
     setState(() {});
   }
 
+  //Funcion para resetear a 0 y parar el juego
   _reset() {
     setState(() {
       points = 0;
@@ -70,10 +78,12 @@ class _RandomColors extends State<RandomColors> {
     _timer.cancel();
   }
 
+  //Función para volver a iniciar el timer
   _start() {
     startTimer();
   }
 
+  // Indicamos la función base al ejecutar
   @override
   void initState() {
     super.initState();
@@ -81,6 +91,7 @@ class _RandomColors extends State<RandomColors> {
     getRandomName();
   }
 
+  // Función para empezar
   void startTimer() {
     //Ejecutamos la función cada segundo
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {

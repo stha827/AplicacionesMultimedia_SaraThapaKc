@@ -1,7 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'drawer.dart';
+import '../drawer/drawer.dart';
 
+// Pantalla con un estilo sacada del enlace de los ejercicios. El ejercicio al cual se le ha añadido el estilo es al ejercicio 2
 class RetosPagina extends StatelessWidget {
   const RetosPagina({super.key});
   @override

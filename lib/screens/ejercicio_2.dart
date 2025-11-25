@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'drawer.dart';
+import '../drawer/drawer.dart';
 
 // Añadimos una imagen nuestra que nos represente justo con nuestro nombre
 class FotoScreen extends StatelessWidget {
   const FotoScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

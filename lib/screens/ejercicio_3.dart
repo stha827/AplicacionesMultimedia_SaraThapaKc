@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'drawer.dart';
+import '../drawer/drawer.dart';
 
 // Pantalla de Miniaturas en una columna
 class MiniaturasScreen extends StatelessWidget {
   const MiniaturasScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

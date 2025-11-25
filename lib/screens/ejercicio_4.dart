@@ -1,9 +1,10 @@
+import 'package:ejercicios/icons/fontelico_icons.dart';
 import 'package:flutter/material.dart';
-import 'drawer.dart';
+import '../drawer/drawer.dart';
 
+//Pantalla con iconos en filas
 class IconosScreen extends StatelessWidget {
   const IconosScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,11 +14,12 @@ class IconosScreen extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Icon(Icons.home),
-            Icon(Icons.favorite),
-            Icon(Icons.school),
-            Icon(Icons.star),
-            Icon(Icons.phone),
+            //Iconos personalizados
+            Icon(FontelicoIcons.emo_devil),
+            Icon(FontelicoIcons.emo_coffee),
+            Icon(FontelicoIcons.emo_saint),
+            Icon(FontelicoIcons.emo_thumbsup),
+            Icon(FontelicoIcons.emo_sleep),
           ],
         ),
       ),
