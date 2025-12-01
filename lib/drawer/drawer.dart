@@ -16,6 +16,7 @@ import '../screens/ejercicio_12.dart';
 import '../screens/ejercicio_13.dart';
 import '../screens/ejercicio_14.dart';
 import '../screens/ejercicio_15.dart';
+import '../screens/ejercicio_16.dart';
 
 // Widget para el menú lateral (Drawer)
 class MyDrawer extends StatelessWidget {
@@ -235,6 +236,19 @@ class MyDrawer extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => const AdivinarNumero()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.access_alarm,
+              color: Color.fromARGB(255, 163, 0, 76),
+            ),
+            title: Text("Ejercicio 16"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const Formularios()),
               );
             },
           ),

@@ -105,6 +105,7 @@ class _RandomColors extends State<ImagenesAleatorias> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Atrapa al gato", style: GoogleFonts.mouseMemoirs()),
+        backgroundColor: Color.fromARGB(255, 255, 234, 207),
       ),
       drawer: const MyDrawer(),
       backgroundColor: Color.fromARGB(255, 255, 241, 223),

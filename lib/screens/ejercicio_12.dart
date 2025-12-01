@@ -114,7 +114,7 @@ class _RandomColors extends State<RandomColors> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Contador")),
+      appBar: AppBar(backgroundColor: Color.fromARGB(255, 231, 231, 231)),
       drawer: const MyDrawer(),
       backgroundColor: const Color.fromARGB(255, 231, 231, 231),
       body: Center(

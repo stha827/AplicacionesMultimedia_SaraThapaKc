@@ -36,12 +36,13 @@ class _ContadorClicsState extends State<ContadorClics> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Contador")),
+      appBar: AppBar(backgroundColor: Color.fromARGB(255, 255, 215, 239)),
       drawer: const MyDrawer(),
       backgroundColor: const Color.fromARGB(255, 255, 215, 239),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          SizedBox(height: MediaQuery.of(context).size.height * 0.3),
           Center(
             child: Text(
               "Has pulsado",

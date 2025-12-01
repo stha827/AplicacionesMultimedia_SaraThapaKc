@@ -12,7 +12,9 @@ class AdivinarNumero extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text("Adivina el número")),
+        appBar: AppBar(
+          title: Text("Adivina el número", style: GoogleFonts.bangers()),
+        ),
         drawer: const MyDrawer(),
         backgroundColor: const Color.fromARGB(255, 255, 251, 211), // #b1b080
         body: const Center(child: NumeroAleatorio()),
@@ -27,15 +29,6 @@ class NumeroAleatorio extends StatefulWidget {
   NumeroAleatorioState createState() {
     return NumeroAleatorioState();
   }
-}
-
-void reset(BuildContext context) {
-  Navigator.pushReplacement(
-    context,
-    MaterialPageRoute(
-      builder: (context) => NumeroAleatorio(),
-    ), // tu widget de la página
-  );
 }
 
 class NumeroAleatorioState extends State<NumeroAleatorio> {
@@ -62,6 +55,10 @@ class NumeroAleatorioState extends State<NumeroAleatorio> {
       }
     }
     return null;
+  }
+
+  void reset() {
+    numeroAleatorio = (random.nextInt(100)) + 1;
   }
 
   @override
@@ -141,7 +138,7 @@ class NumeroAleatorioState extends State<NumeroAleatorio> {
               SizedBox(width: 100),
               ElevatedButton(
                 onPressed: () {
-                  reset(context);
+                  reset();
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(135, 60),
