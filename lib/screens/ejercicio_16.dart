@@ -51,12 +51,29 @@ class FormulariosState extends State<FormularioContenido> {
     'Mestizo',
     'Otro',
   ];
-  String _tipoRaza = 'Mestizo';
 
+  final List<String> _opRazaGato = [
+    'Siberiano',
+    'Egipcio',
+    'Persa',
+    'Maine Coon',
+    'Oriental',
+    'Siamés',
+    'Bombay',
+    'Irlandés',
+    'Mestizo',
+    'Otro',
+  ];
+
+  String _tipoRaza = 'Mestizo';
   bool _isSwitched = false;
-  String? _selectedOption = 'Opción 1';
-  bool _packTv = false;
-  double _sliderValor = 18.0;
+  String _perroGato = 'Perro';
+  String? _selectedOption = 'A Seleccionar';
+  bool _machoHembra = false;
+  String _seleccionPerro = 'Macho';
+  String _seleccionGato = 'No';
+  double _sliderValorPerro = 18.0;
+  double _sliderValorGato = 20.0;
 
   @override
   Widget build(BuildContext context) {
@@ -79,34 +96,39 @@ class FormulariosState extends State<FormularioContenido> {
         const SizedBox(height: 20),
         _crearPassword(),
         const SizedBox(height: 20),
-        _crearNombre(),
+        _isSwitched ? _crearNombreGato() : _crearNombrePerro(),
         const SizedBox(height: 20),
-        _crearDesplegable(),
+        _isSwitched ? _crearDesplegableGato() : _crearDesplegablePerro(),
         const SizedBox(height: 20),
-        _crearCheckBox(),
+        _isSwitched ? _crearCheckBoxGato() : _crearCheckBoxPerro(),
         const SizedBox(height: 20),
-        _crearRadio(),
+        _isSwitched ? _crearRadioGato() : _crearRadioPerro(),
+        _isSwitched ? _crearSliderGato() : _crearSliderPerro(),
         const SizedBox(height: 20),
-        _crearSlider(),
-        const SizedBox(height: 20),
-        _visualizarDatos(),
+        _isSwitched ? _visualizarDatosGato() : _visualizarDatosPerro(),
       ],
     );
   }
 
-  Widget _crearNombre() {
-    return TextField(
-      onChanged: (valor) => setState(() {
-        _nombre = valor;
-      }),
-      textCapitalization: TextCapitalization.words,
-      keyboardType: TextInputType.name,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15.0)),
-        hintText: 'Nombre',
-        labelText: 'Nombre',
-        helperText: 'Nombre de tu perrito',
-        suffixIcon: const Icon(Icons.pets),
+  Widget _crearSwitch() {
+    return Transform.scale(
+      scale: 1.3,
+      child: Switch(
+        value: _isSwitched,
+        onChanged: (value) {
+          setState(() {
+            _isSwitched = value;
+            if (_isSwitched == true) {
+              _perroGato = "Gato";
+              _tipoRaza = _opRazaGato.first;
+            } else {
+              _perroGato = "Perro";
+              _tipoRaza = _opRazaPerro.first;
+            }
+          });
+        },
+        activeThumbColor: Color.fromARGB(255, 209, 134, 129),
+        inactiveThumbColor: Color.fromARGB(255, 172, 191, 183),
       ),
     );
   }
@@ -134,7 +156,7 @@ class FormulariosState extends State<FormularioContenido> {
         _password = valor;
       }),
       obscureText: true,
-      obscuringCharacter: '-',
+      obscuringCharacter: '♡',
       maxLength: 20,
       decoration: InputDecoration(
         hintText: 'Contraseña de entrada',
@@ -145,7 +167,41 @@ class FormulariosState extends State<FormularioContenido> {
     );
   }
 
-  Widget _crearDesplegable() {
+  Widget _crearNombrePerro() {
+    return TextField(
+      onChanged: (valor) => setState(() {
+        _nombre = valor;
+      }),
+      textCapitalization: TextCapitalization.words,
+      keyboardType: TextInputType.name,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15.0)),
+        hintText: 'Nombre',
+        labelText: 'Nombre',
+        helperText: 'Nombre de tu perrito',
+        suffixIcon: const Icon(Icons.pets),
+      ),
+    );
+  }
+
+  Widget _crearNombreGato() {
+    return TextField(
+      onChanged: (valor) => setState(() {
+        _nombre = valor;
+      }),
+      textCapitalization: TextCapitalization.words,
+      keyboardType: TextInputType.name,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15.0)),
+        hintText: 'Nombre',
+        labelText: 'Nombre',
+        helperText: 'Nombre de tu gatito',
+        suffixIcon: const Icon(Icons.pets),
+      ),
+    );
+  }
+
+  Widget _crearDesplegablePerro() {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: DropdownButtonFormField(
@@ -168,39 +224,72 @@ class FormulariosState extends State<FormularioContenido> {
     return lista;
   }
 
-  Widget _crearCheckBox() {
+  Widget _crearDesplegableGato() {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: DropdownButtonFormField<String>(
+        initialValue: _tipoRaza,
+        onChanged: (String? valor) {
+          setState(() {
+            _tipoRaza = valor!;
+          });
+        },
+        items: _crearItemsDropDownGato(),
+      ),
+    );
+  }
+
+  List<DropdownMenuItem<String>> _crearItemsDropDownGato() {
+    List<DropdownMenuItem<String>> lista = [];
+    for (var element in _opRazaGato) {
+      lista.add(DropdownMenuItem(value: element, child: Text(element)));
+    }
+    return lista;
+  }
+
+  Widget _crearCheckBoxPerro() {
     return CheckboxListTile(
-      title: const Text('Pack TV:'),
+      title: const Text('Macho (Seleccionado)\nHembra (No seleccionado)'),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20.0),
         side: const BorderSide(color: Colors.grey),
       ),
-      value: _packTv,
+      value: _machoHembra,
       onChanged: (nuevoValor) {
         setState(() {
-          _packTv = nuevoValor!;
+          _machoHembra = nuevoValor!;
+          if (_machoHembra == true) {
+            _seleccionPerro = "Macho";
+          } else {
+            _seleccionPerro = "Hembra";
+          }
         });
       },
     );
   }
 
-  Widget _crearSwitch() {
-    return Transform.scale(
-      scale: 1.3,
-      child: Switch(
-        value: _isSwitched,
-        onChanged: (value) {
-          setState(() {
-            _isSwitched = value;
-          });
-        },
-        activeThumbColor: Color.fromARGB(255, 209, 134, 129),
-        inactiveThumbColor: Color.fromARGB(255, 172, 191, 183),
+  Widget _crearCheckBoxGato() {
+    return CheckboxListTile(
+      title: const Text('¿Llevas al gato de paseo?'),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
+        side: const BorderSide(color: Colors.grey),
       ),
+      value: _machoHembra,
+      onChanged: (nuevoValor) {
+        setState(() {
+          _machoHembra = nuevoValor!;
+          if (_machoHembra == true) {
+            _seleccionGato = "Si";
+          } else {
+            _seleccionGato = "No";
+          }
+        });
+      },
     );
   }
 
-  Widget _crearRadio() {
+  Widget _crearRadioPerro() {
     return RadioGroup<String>(
       groupValue: _selectedOption,
       onChanged: (value) {
@@ -211,32 +300,45 @@ class FormulariosState extends State<FormularioContenido> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          RadioListTile<String>(
-            value: 'Oferta individual',
-            title: Text('Adoptado'),
-          ),
-          RadioListTile<String>(
-            value: 'Oferta general',
-            title: Text('Rescatado'),
-          ),
-          RadioListTile<String>(value: 'Oferta local', title: Text('Comprado')),
+          RadioListTile<String>(value: 'Adoptado', title: Text('Adoptado')),
+          RadioListTile<String>(value: 'Rescatado', title: Text('Rescatado')),
+          RadioListTile<String>(value: 'Comprado', title: Text('Comprado')),
         ],
       ),
     );
   }
 
-  Widget _crearSlider() {
-    Text("HOLA");
-    return Slider(
-      value: _sliderValor,
-      onChanged: (nuevoValor) {
+  Widget _crearRadioGato() {
+    return RadioGroup<String>(
+      groupValue: _selectedOption,
+      onChanged: (value) {
         setState(() {
-          _sliderValor = (nuevoValor.toInt()).toDouble();
+          _selectedOption = value;
         });
       },
-      activeColor: Colors.amber,
-      inactiveColor: Colors.black87,
-      thumbColor: Colors.blue,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          RadioListTile<String>(value: 'Naranja', title: Text('Naranja')),
+          RadioListTile<String>(value: 'Tricolor', title: Text('Tricolor')),
+          RadioListTile<String>(value: 'Negro', title: Text('Negro')),
+          RadioListTile<String>(value: 'Otro', title: Text('Otro')),
+        ],
+      ),
+    );
+  }
+
+  Widget _crearSliderPerro() {
+    return Slider(
+      value: _sliderValorPerro,
+      onChanged: (nuevoValor) {
+        setState(() {
+          _sliderValorPerro = (nuevoValor.toInt()).toDouble();
+        });
+      },
+      activeColor: Color.fromARGB(255, 172, 191, 183),
+      inactiveColor: Color.fromARGB(255, 209, 134, 129),
+      thumbColor: Color.fromARGB(255, 142, 109, 134),
 
       label: 'Edad:',
       min: 0,
@@ -244,17 +346,66 @@ class FormulariosState extends State<FormularioContenido> {
     );
   }
 
-  Widget _visualizarDatos() {
+  Widget _crearSliderGato() {
+    return Slider(
+      value: _sliderValorGato,
+      onChanged: (nuevoValor) {
+        setState(() {
+          _sliderValorGato = (nuevoValor.toInt()).toDouble();
+        });
+      },
+      activeColor: Color.fromARGB(255, 172, 191, 183),
+      inactiveColor: Color.fromARGB(255, 209, 134, 129),
+      thumbColor: Color.fromARGB(255, 142, 109, 134),
+
+      label: 'Edad:',
+      min: 0,
+      max: 39,
+    );
+  }
+
+  Widget _visualizarDatosPerro() {
     return Column(
       children: [
-        Text('Nombre: $_nombre'),
+        Text(
+          'INFORMACIÓN',
+          style: GoogleFonts.gloriaHallelujah(
+            fontWeight: FontWeight.bold,
+            fontSize: 15,
+            color: Color.fromARGB(255, 142, 109, 134),
+          ),
+        ),
+        Text('Nombre Animal: $_nombre'),
         Text('Correo electrónico: $_correo'),
         Text('Contraseña: $_password'),
-        Text('Tipo de contrato: $_tipoRaza'),
-        Text('Valor del switch: $_isSwitched'),
-        Text('Valor del Radio: $_selectedOption'),
-        Text('Pack TV: $_packTv'),
-        Text('Edad: ${_sliderValor.toInt()}'),
+        Text('Raza: $_tipoRaza'),
+        Text('Animal elegido: $_perroGato'),
+        Text('Modo de incorporación: $_selectedOption'),
+        Text('Sexo: $_seleccionPerro'),
+        Text('Edad: ${_sliderValorPerro.toInt()}'),
+      ],
+    );
+  }
+
+  Widget _visualizarDatosGato() {
+    return Column(
+      children: [
+        Text(
+          'INFORMACIÓN',
+          style: GoogleFonts.gloriaHallelujah(
+            fontWeight: FontWeight.bold,
+            fontSize: 15,
+            color: Color.fromARGB(255, 142, 109, 134),
+          ),
+        ),
+        Text('Nombre Animal: $_nombre'),
+        Text('Correo electrónico: $_correo'),
+        Text('Contraseña: $_password'),
+        Text('Raza: $_tipoRaza'),
+        Text('Animal elegido: $_perroGato'),
+        Text('Mentalidad de gato: $_selectedOption'),
+        Text('Paseo: $_seleccionGato'),
+        Text('Edad: ${_sliderValorGato.toInt()}'),
       ],
     );
   }
