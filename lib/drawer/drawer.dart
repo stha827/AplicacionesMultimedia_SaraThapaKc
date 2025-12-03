@@ -241,7 +241,7 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
-              Icons.access_alarm,
+              Icons.storage,
               color: Color.fromARGB(255, 163, 0, 76),
             ),
             title: Text("Ejercicio 16"),
