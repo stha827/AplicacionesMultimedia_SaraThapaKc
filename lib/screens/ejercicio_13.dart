@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'dart:math';
 import 'dart:async';
 import '../drawer/drawer.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // Pantalla de un juego con imagenes aleatorias en posiciones aleatorias junto con un contador de clicks de la imagen
 void main() {
@@ -30,6 +31,7 @@ class _RandomColors extends State<ImagenesAleatorias> {
     './assets/screens13/img5.jpg',
   ];
   late Image randomImage = Image.asset(imagenes[0]);
+  bool dificil = false;
 
   // Obtenemos una imagen random del array
   void getRandomImage() {
@@ -43,7 +45,7 @@ class _RandomColors extends State<ImagenesAleatorias> {
     final size = MediaQuery.of(context).size;
     final maxWidth = 150;
     final maxHeight = size.height - 220;
-    final minHeight = 160;
+    final minHeight = 180;
     final heightValido = maxHeight - minHeight;
 
     randomX = Random().nextDouble() * maxWidth;
@@ -51,33 +53,43 @@ class _RandomColors extends State<ImagenesAleatorias> {
   }
 
   //Funcion para el modo de juego fácil
-  _facil() {
+  _facil() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      points = 0;
+      prefs.setBool('dificil', false);
     });
     _timer.cancel();
   }
 
   //Funcion para el modo de juego dificil
-  _dificil() {
-    setState(() {
-      points = 0;
-    });
+  _dificil() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {});
+    prefs.setBool('dificil', true);
     startTimer();
     _timer = Timer.periodic(const Duration(milliseconds: 500), (timer) {
       //Comprobamos si el widget todavía sigue activo
       if (!mounted) return;
       getRandomImage();
       generateRandomPosition(context);
-
       setState(() {});
     });
   }
 
+  //Función de resetear el contador
+  _reset() {
+    setState(() {
+      points = 0;
+    });
+  }
+
   //Función para sumar puntos y cambiar la imagen de posicións
-  void onGiftTap(Image image) {
-    points++;
-    setState(() {});
+  void onGiftTap(Image image) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      points++;
+    });
+    await prefs.setInt('puntos', points);
   }
 
   // Indicamos la función base al ejecutar
@@ -85,11 +97,26 @@ class _RandomColors extends State<ImagenesAleatorias> {
   void initState() {
     super.initState();
     startTimer();
+    loadCounter();
   }
 
   // Función para empezar
   void startTimer() {
     _timer.cancel();
+  }
+
+  // Función para guardar los datos anteriores
+  loadCounter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      points = prefs.getInt('puntos') ?? -1;
+      dificil = prefs.getBool('dificil')!;
+      if (dificil == true) {
+        _dificil();
+      } else {
+        _facil();
+      }
+    });
   }
 
   // Creamos un método para que el widget se elimine automáticamente y podamos quitar el error
@@ -188,11 +215,34 @@ class _RandomColors extends State<ImagenesAleatorias> {
               ],
             ),
             Positioned(
-              top: 110,
+              top: 103,
+              left: 0,
+              right: 0,
+              child: ElevatedButton(
+                onPressed: _reset,
+                style: ElevatedButton.styleFrom(
+                  shadowColor: const Color.fromARGB(255, 0, 0, 0),
+                  elevation: 2,
+                  backgroundColor: const Color.fromARGB(97, 156, 83, 0),
+                  minimumSize: Size(10, 40),
+                ),
+                child: Text(
+                  "Reset",
+                  style: GoogleFonts.mouseMemoirs(
+                    fontSize: 17,
+                    color: const Color.fromARGB(255, 255, 244, 232),
+                  ),
+                ),
+              ),
+            ),
+            //Diálogo
+            Positioned(
+              top: 147,
               left: 0,
               right: 0,
               child: Center(child: MostrarSnackBar()),
             ),
+            //Imágenes
             Center(
               child: Stack(
                 children: [
