@@ -1,6 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:ejercicios/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import '../main.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
         splash: 'assets/img/logoAnimado.gif',
         splashIconSize: 2000.0,
         centered: true,
-        nextScreen: const PaginaInicio(),
+        nextScreen: const HomeScreen(),
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         duration: 1200,
       ),

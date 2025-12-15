@@ -1,3 +1,5 @@
+import 'package:ejercicios/icons/fontelico_icons.dart';
+import 'package:ejercicios/screens/examen/mainExamen.dart';
 import 'package:flutter/material.dart';
 
 // Importamos las pantallas de la carpeta screens
@@ -46,6 +48,23 @@ class MyDrawer extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
+          ),
+          ListTile(
+            leading: Icon(
+              FontelicoIcons.emo_saint,
+              color: Color.fromARGB(255, 0, 0, 0),
+              size: 17,
+            ),
+            title: Text(
+              "Examen",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const MainExamen()),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(

@@ -33,6 +33,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/examen/pantalla1/pajaro.jpg
     - assets/fonts/fontelico.ttf
     - assets/screens1/imagen_representativa.jpg
     - assets/screens3/lirios.webp
