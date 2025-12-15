@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ejercicios/icons/fontelico_icons.dart';
-
-// Importamos las pantallas desde la carpeta screens
 import '../drawer/drawer.dart';
 
 // Pantalla de inicio con el Drawer
@@ -12,10 +10,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Cabecera
       appBar: AppBar(
         title: Text("Ejercicios", style: GoogleFonts.emilysCandy()),
       ),
       drawer: const MyDrawer(),
+      //Estilo de degradado para el cuerpo
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -34,6 +34,7 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+//Cuerpo
 class Contenido extends StatelessWidget {
   const Contenido({super.key});
   @override

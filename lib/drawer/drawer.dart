@@ -1,8 +1,8 @@
 import 'package:ejercicios/icons/fontelico_icons.dart';
-import 'package:ejercicios/screens/examen/mainExamen.dart';
 import 'package:flutter/material.dart';
 
 // Importamos las pantallas de la carpeta screens
+import 'package:ejercicios/screens/examen/mainExamen.dart';
 import '../screens/ejercicio_1.dart';
 import '../screens/ejercicio_2.dart';
 import '../screens/ejercicio_3.dart';
@@ -56,7 +56,7 @@ class MyDrawer extends StatelessWidget {
               size: 17,
             ),
             title: Text(
-              "Examen",
+              "EXAMEN",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             onTap: () {

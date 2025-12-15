@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import './pantalla2.dart';
 
+//Clase de la Primera Pantalla: Modo oscuro y claro
 class Pantalla1 extends StatefulWidget {
   const Pantalla1({super.key});
 
@@ -29,7 +30,8 @@ class Pantalla1State extends State<Pantalla1> {
   }
 }
 
-// Tema claro local
+// TEMAS
+// Tema claro colores
 final _lightTheme = ThemeData(
   brightness: Brightness.light,
   primaryColor: Colors.black,
@@ -45,7 +47,7 @@ final _lightTheme = ThemeData(
   ),
 );
 
-// Tema oscuro local
+// Tema oscuro colores
 final _darkTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: const Color.fromARGB(255, 255, 255, 255),
@@ -64,7 +66,6 @@ class HomePantalla1 extends StatelessWidget {
   //Variables y constantes
   final bool isDarkMode;
   final ValueChanged<bool> toggleTheme;
-
   const HomePantalla1({
     super.key,
     required this.isDarkMode,
@@ -89,10 +90,15 @@ class HomePantalla1 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            //Texto principal
             Text('Sara Thapa Kc', style: GoogleFonts.anton(fontSize: 30)),
             SizedBox(height: 15),
+
+            //Imagen
             Image.asset("assets/examen/pantalla1/pajaro.jpg"),
             SizedBox(height: 15),
+
+            //Botón que nos llevará a la segunda pantalla
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 minimumSize: Size(150, 60),

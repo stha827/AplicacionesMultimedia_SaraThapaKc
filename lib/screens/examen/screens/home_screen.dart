@@ -3,6 +3,7 @@ import 'package:ejercicios/screens/examen/screens/pantalla1.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+//PANTALLA PRINCIPAL
 class Examen extends StatelessWidget {
   const Examen({super.key});
   @override
@@ -10,26 +11,13 @@ class Examen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Sara 2 DAM", style: GoogleFonts.anton())),
       drawer: const MyDrawer(),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
-            colors: [
-              Color.fromARGB(255, 255, 189, 249),
-              Color.fromARGB(255, 255, 255, 255),
-            ],
-            stops: [0.3, 0.75],
-          ),
-        ),
-        child: _MyHomePageState(),
-      ),
+      body: _ExamenHome(),
     );
   }
 }
 
 //Clase con nuestra pantalla
-class _MyHomePageState extends StatelessWidget {
+class _ExamenHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

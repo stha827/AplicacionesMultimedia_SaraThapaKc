@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+//Clase de la Tercera Pantalla: Juego
 class Pantalla3 extends StatefulWidget {
   const Pantalla3({super.key});
   @override
@@ -18,7 +19,7 @@ class MiPantalla3 extends State<Pantalla3> {
   late int maximo = 51;
   late String objetivo = "A definir...";
 
-  //Metodos
+  //METODOS
   //Meotodo para poner a 0
   void reset() {
     setState(() {
@@ -32,22 +33,25 @@ class MiPantalla3 extends State<Pantalla3> {
     setState(() {
       numeroAleatorio = (random.nextInt(6)) + 1;
       if (suma > maximo) {
-        objetivo = "No superado, reinicia para volver a jugar";
+        objetivo = "No superado :(, reinicia para volver a jugar";
       } else if (suma == maximo) {
-        objetivo = "Superado, reinicia para volver a jugar";
+        objetivo = "Superado :), reinicia para volver a jugar";
       } else {
         suma += numeroAleatorio;
       }
     });
   }
 
+  //Pantalla
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //CABECERA
       appBar: AppBar(
         title: Text("Sara 2 DAM", style: GoogleFonts.antonio()),
         backgroundColor: const Color.fromARGB(255, 207, 226, 255),
       ),
+      //CUERPO
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -65,7 +69,7 @@ class MiPantalla3 extends State<Pantalla3> {
             ),
             SizedBox(height: 30),
 
-            //Botones
+            //BOTONES
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -117,6 +121,7 @@ class MiPantalla3 extends State<Pantalla3> {
               ],
             ),
             SizedBox(height: 30),
+
             //Texto informativo
             Text(
               "Objetivo: $objetivo",

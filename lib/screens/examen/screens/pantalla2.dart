@@ -2,14 +2,15 @@ import 'package:ejercicios/screens/examen/screens/pantalla3.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+//Clase de la Segunda Pantalla: Formulario
 class Pantalla2 extends StatefulWidget {
   const Pantalla2({super.key});
   @override
-  MiPantalla2 createState() => MiPantalla2();
+  Pantalla2State createState() => Pantalla2State();
 }
 
 //Clase con nuestra pantalla
-class MiPantalla2 extends State<Pantalla2> {
+class Pantalla2State extends State<Pantalla2> {
   final List<String> _opcion = ["AMD", "Intel"];
   late var _inicial = "AMD";
   bool _isSwitched = true;
@@ -18,24 +19,30 @@ class MiPantalla2 extends State<Pantalla2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Cabecera
       appBar: AppBar(
         title: Text("Sara 2 DAM", style: GoogleFonts.antonio()),
         backgroundColor: const Color.fromARGB(255, 207, 226, 255),
       ),
 
+      //Cuerpo
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            //Texto
             Text(
               'Elige tu procesador: ',
               style: GoogleFonts.anton(fontSize: 30),
             ),
             SizedBox(height: 10),
+
+            //Formulario
             _amdIntel(),
             SizedBox(height: 10),
             _isSwitched ? _opcionesAMD() : _opcionesIntel(),
             SizedBox(height: 30),
+
             //Botón para cambiar de pantalla
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -65,7 +72,7 @@ class MiPantalla2 extends State<Pantalla2> {
     );
   }
 
-  // Widget con la lista desplegable con las opciones de Intel o AMD
+  // Widget con la lista desplegable
   Widget _amdIntel() {
     return Padding(
       padding: const EdgeInsetsGeometry.all(20),
@@ -73,6 +80,7 @@ class MiPantalla2 extends State<Pantalla2> {
         initialValue: _inicial,
         onChanged: (String? valor) {
           setState(() {
+            //Comprobamos que valor está puesto para poder cambiar las opciones
             _inicial = valor!;
             if (valor == "Intel") {
               _isSwitched = false;
@@ -82,10 +90,13 @@ class MiPantalla2 extends State<Pantalla2> {
           });
         },
         items: _elegirOpcion(),
+        dropdownColor: Colors.black,
+        padding: EdgeInsets.all(10),
       ),
     );
   }
 
+  //Añadimos los valores de la lista a la lista desplegable
   List<DropdownMenuItem<String>> _elegirOpcion() {
     List<DropdownMenuItem<String>> lista = [];
     for (var element in _opcion) {
@@ -109,7 +120,6 @@ class MiPantalla2 extends State<Pantalla2> {
   Widget _opcionesAMD() {
     return RadioGroup<String>(
       groupValue: _selectedOption,
-
       onChanged: (value) {
         setState(() {
           _selectedOption = value;
@@ -118,24 +128,49 @@ class MiPantalla2 extends State<Pantalla2> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          //Opciones disponibles
           RadioListTile<String>(
             value: 'Ryzen 3',
-            title: Text('Ryzen 3', style: GoogleFonts.anton()),
+            title: Text(
+              'Ryzen 3',
+              style: GoogleFonts.antonio(
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
+              ),
+            ),
             activeColor: Color.fromARGB(255, 88, 155, 255),
           ),
           RadioListTile<String>(
             value: 'Ryzen 5',
-            title: Text('Ryzen 5', style: GoogleFonts.anton()),
+            title: Text(
+              'Ryzen 5',
+              style: GoogleFonts.antonio(
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
+              ),
+            ),
             activeColor: Color.fromARGB(255, 88, 155, 255),
           ),
           RadioListTile<String>(
             value: 'Ryzen 7',
-            title: Text('Ryzen 7', style: GoogleFonts.anton()),
+            title: Text(
+              'Ryzen 7',
+              style: GoogleFonts.antonio(
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
+              ),
+            ),
             activeColor: Color.fromARGB(255, 88, 155, 255),
           ),
           RadioListTile<String>(
             value: 'Ryzen 9',
-            title: Text('Ryzen 9', style: GoogleFonts.anton()),
+            title: Text(
+              'Ryzen 9',
+              style: GoogleFonts.antonio(
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
+              ),
+            ),
             activeColor: Color.fromARGB(255, 88, 155, 255),
           ),
         ],
@@ -145,9 +180,9 @@ class MiPantalla2 extends State<Pantalla2> {
 
   //Widget con las opciones en forma de selección de Intel
   Widget _opcionesIntel() {
+    //Opciones disponibles
     return RadioGroup<String>(
       groupValue: _selectedOption,
-
       onChanged: (value) {
         setState(() {
           _selectedOption = value;
@@ -158,22 +193,46 @@ class MiPantalla2 extends State<Pantalla2> {
         children: <Widget>[
           RadioListTile<String>(
             value: 'i3',
-            title: Text('i3', style: GoogleFonts.anton()),
+            title: Text(
+              'i3',
+              style: GoogleFonts.antonio(
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
+              ),
+            ),
             activeColor: Color.fromARGB(255, 88, 155, 255),
           ),
           RadioListTile<String>(
             value: 'i5',
-            title: Text('i5', style: GoogleFonts.anton()),
+            title: Text(
+              'i5',
+              style: GoogleFonts.antonio(
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
+              ),
+            ),
             activeColor: Color.fromARGB(255, 88, 155, 255),
           ),
           RadioListTile<String>(
             value: 'i7',
-            title: Text('i7', style: GoogleFonts.anton()),
+            title: Text(
+              'i7',
+              style: GoogleFonts.antonio(
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
+              ),
+            ),
             activeColor: Color.fromARGB(255, 88, 155, 255),
           ),
           RadioListTile<String>(
             value: 'i9',
-            title: Text('i9', style: GoogleFonts.anton()),
+            title: Text(
+              'i9',
+              style: GoogleFonts.antonio(
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
+              ),
+            ),
             activeColor: Color.fromARGB(255, 88, 155, 255),
           ),
         ],

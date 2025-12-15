@@ -43,9 +43,9 @@ class _RandomColors extends State<ImagenesAleatorias> {
   //Generamos una posición aleatoria
   void generateRandomPosition(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final maxWidth = 150;
+    final maxWidth = size.width - 150;
     final maxHeight = size.height - 220;
-    final minHeight = 180;
+    final minHeight = 190;
     final heightValido = maxHeight - minHeight;
 
     randomX = Random().nextDouble() * maxWidth;
@@ -216,15 +216,18 @@ class _RandomColors extends State<ImagenesAleatorias> {
             ),
             Positioned(
               top: 103,
-              left: 0,
-              right: 0,
+              left: 110,
+              right: 110,
               child: ElevatedButton(
                 onPressed: _reset,
                 style: ElevatedButton.styleFrom(
                   shadowColor: const Color.fromARGB(255, 0, 0, 0),
                   elevation: 2,
                   backgroundColor: const Color.fromARGB(97, 156, 83, 0),
-                  minimumSize: Size(10, 40),
+                  minimumSize: Size(100, 40),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  ),
                 ),
                 child: Text(
                   "Reset",
@@ -238,8 +241,8 @@ class _RandomColors extends State<ImagenesAleatorias> {
             //Diálogo
             Positioned(
               top: 147,
-              left: 0,
-              right: 0,
+              left: 50,
+              right: 50,
               child: Center(child: MostrarSnackBar()),
             ),
             //Imágenes
@@ -275,8 +278,14 @@ class MostrarSnackBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Positioned(
       child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          shadowColor: const Color.fromARGB(255, 0, 0, 0),
+          elevation: 2,
+          minimumSize: Size(0, 40),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+        ),
         onPressed: () {
           final snackBar = SnackBar(
             content: const Text(
@@ -291,7 +300,7 @@ class MostrarSnackBar extends StatelessWidget {
           'Modos de juego',
           style: GoogleFonts.mouseMemoirs(
             fontSize: 17,
-            color: const Color.fromARGB(255, 161, 86, 0),
+            color: const Color.fromARGB(255, 141, 75, 0),
           ),
         ),
       ),
